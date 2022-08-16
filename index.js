@@ -26,15 +26,15 @@ app.engine("html", require("ejs").renderFile);
 //     data.forEach(item => console.log(item.get("userName")));
 //  });
 
- // Example API/function //////////////////////////////////////////////////////////
-
- function addPlant() {
-    const snapshot = db.collection('Users').get().then(data => {
-        data.forEach(item => console.log(item.get("userName")));
-     });
- }
-
-////////////////////////////////////////////////////////////
+function addPlant(){
+    
+    // Add a new user with a generated id.
+    const res = await db.collection('Users').collection('Plants').add({
+        plantID: document.getElementById('plantID')
+    });
+    
+    console.log('Added User with ID: ', res.id);index.js 
+}
 
  ///// LAST LINE ////////////////////////////////////////////
 
