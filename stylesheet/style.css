@@ -509,19 +509,6 @@ text-decoration: underline;
   margin: 5px 0;
 }
 
-.price {
-  font-weight: 900;
-  font-size: 20px;
-}
-
-.actual-price {
-  margin-left: 20px;
-  opacity: 0.5;
-  text-decoration: line-through;
-}
-
-
-
 .pre-btn,
 .nxt-btn {
   border: none;
