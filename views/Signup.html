@@ -1,87 +1,86 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <!-- Page Title -->
+        <title> Plantopia - Reminders Page </title>
+        <!-- Metadata -->
+        <meta charset = "utf-8">
+        <meta name = "author" content = "ASP Team 109">
+        <meta name = "description" content = "Displays the sign up page of the user">
+        <meta name = "refresh" content = "600">
+        <!-- To allow better viewing on mobile devices -->
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <link rel = "stylesheet" type = "text/css" href = "/stylesheet/style.css">
+        <link rel = "preconnect" href = "https://drive.google.com/">
+    </head>
+    
+    <body>
+        <header>
+            <div class = "navigation-container">
+                <div class = "top-head">
+                    <div class = "web-name">
+                        <a href="Home.html"><img src="https://drive.google.com/uc?id=1kcM09i9VVKkjatP_R2CIH65m5zlbXe2D"></a>
+                    </div>
 
-<html lang="en" dir="ltr">
-    <html class="no-js">
-        <head>
-            <meta charset = "utf-8">
-            <meta http-eqiv="X-UA-Compatible" content="IE=edge">
-            <title></title>
-            <meta name = "description" content = "Sports News">
-            <meta name = "keywords" content = "Sports News">
-            <meta name = "viewport" content = "width = device-width, initial-scale = 1">
-            <link rel="stylesheet" href="style.css">
-            <!-- google fonts -->
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-            <!--fontawesome-->
-            <script src="https://kit.fontawesome.com/6577d9627d.js" crossorigin="anonymous"></script>
-        </head>
-  <body>
-    <header>
-        <div class = "navigation-container">
-            <div class = "top-head">
-                <div class = "web-name">
-                    <a href="Home.html"><img src="https://drive.google.com/uc?id=1kcM09i9VVKkjatP_R2CIH65m5zlbXe2D"></a>
+                    <div class = "ham-btn">
+                        <span>
+                            <i class = "fas fa-bars"></i>
+                        </span>
+                    </div>
+                    
+                    <div class = "times-btn">
+                        <span>
+                            <i class = "fas fa-times"></i>
+                        </span>
+                    </div>
                 </div>
-
-                <div class = "ham-btn">
-                    <span>
-                         <i class = "fas fa-bars"></i>
-                    </span>
-                </div>
-                <div class = "times-btn">
-                    <span>
-                        <i class = "fas fa-times"></i>
-                    </span>
+                
+                <!-- Navigation Bar -->
+                <div class = "Nav-Bar" id = "Nav-Bar">
+                    <nav>
+                        <ul>
+                            <li><a href="Home.html">Home</a></li>
+                            <li><a href="Plants.html">Plants</a></li>
+                            <li><a href="Achievements.html">Achievements</a></li>
+                            <li><a href="Shop.html">Shops</a></li>
+                            <li><a href="Reminder.html">Reminders</a></li>
+                            <li><a href="History.html">History</a></li>
+                            <li><a href="Login.html">Log In</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            <!--nav bar-->
-            <div class = "nav-bar" id = "nav-bar">
-                <nav>
-                    <ul>
-                        <li class="active"><a href="Home.html"></i>HOME</a></li>
-                        <li><a href="Plants.html"></i>PLANT</a></li>
-                        <li><a href="Achievements.html"></i>ACHIEVEMENT</a>
-                        <li><a href="Shop.html"></i>SHOP</a></li>
-                        <li><a href="Reminder.html"></i>REMINDER</a>
-                        <li><a href="History.html"></i>HISTORY</a>
-                        <li><a href="Login.html"></i>LOGIN</a>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+        </header>
+
         <div class="center">
             <h1>Sign up</h1>
             <form method="post" action="/signed-up">
-        <div class="loginF">
-            <input type="text" name="username" id="username" required>
-            <span></span>
-            <label>Username</label>
-        </div>
-        <div class="loginF">
-            <input type="password" name="password" id="password" required>
-            <span></span>
-            <label>Password</label>
-        </div>
-        <div class="loginF">
-            <input type="email" name="email" id="email" required>
-            <span></span>
-            <label>Email</label>
-        </div>
-        <div class="pass"></div>
-            <input type="submit" value="Sign up">
-            <div class="signup">
-                Are you a member? <a href="Login.html"></i>Log in</a>
-            </div>
-      </form>
-    </div>
+                <div class="loginF">
+                    <input type="text" name="username" id="username" required>
+                    <span></span>
+                    <label>Username</label>
+                </div>
 
-  </body>
-</html>
-        
-        
+                <div class="loginF">
+                    <input type="password" name="password" id="password" required>
+                    <span></span>
+                    <label>Password</label>
+                </div>
+
+                <div class="loginF">
+                    <input type="email" name="email" id="email" required>
+                    <span></span>
+                    <label>Email</label>
+                </div>
+                
+                <div class="pass"></div>
+                    <input type="submit" value="Sign up">
+                    <div class="signup">
+                        Are you a member? <a href="Login.html"></i>Log in</a>
+                </div>
+            </form>
+        </div>
+
         <script src = "script.js"async defer></script>
     </body>
 </html>
