@@ -1,12 +1,7 @@
-/* font-family: 'Lato', sans-serif;
-font-family: 'Montserrat', sans-serif; */
-
 *{
   box-sizing:border-box;
   padding: 0;
   margin: 0;
-
-
 }
 
 :root{
@@ -58,7 +53,7 @@ hr{
 .times-btn{
   display: none;
 }
-.nav-bar{
+.Nav-Bar{
   background: #333;
 }
 .show-nav{
@@ -67,7 +62,7 @@ hr{
 
 /***/
 
-.nav-bar ul li{
+.Nav-Bar ul li{
   text-align: center;
   display: block;
   padding: 15px 0;
@@ -76,15 +71,15 @@ hr{
   font-size:20px;
 }
 
-.nav-bar ul li:hover{
+.Nav-Bar ul li:hover{
   background: #0e0e0e;
 }
 
-.nav-bar ul li a{
+.Nav-Bar ul li a{
   color: #fff;
   text-transform: uppercase;
 }
-.nav-bar ul li a:hover{
+.Nav-Bar ul li a:hover{
   text-decoration: underline;
 }
 
@@ -99,7 +94,7 @@ hr{
 {
   min-height:100vh;
   width: 100%;
-  background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/banner.png);
+  background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://drive.google.com/uc?id=1X8B9ufqN1_GcR25gO1CTr9tEeJVlBLl6);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -251,23 +246,23 @@ hr{
   flex: 0 0 15%;
 }
 
-.nav-bar{
+.Nav-Bar{
   flex: 1 0 auto;
   height: 100%;
   background: transparent;
 }
 
-.nav-bar nav ul{
+.Nav-Bar nav ul{
   display: flex;
   justify-content: center;
 
 }
 
-.nav-bar nav ul li{
+.Nav-Bar nav ul li{
   padding-right: 30px;
 }
 
-.nav-bar nav ul li:hover{
+.Nav-Bar nav ul li:hover{
   background: none;
 
 }
@@ -612,14 +607,14 @@ border: none;
 /*////////////////////////////////////////////////////////*/
 
 /* Plants */
-.attractions-grid-container
+.achievements-grid-container
 {
   display: grid;
   grid-template-columns: auto;
   margin-top: 50px;
 }
 
-.attractions-grid-container h2
+.achievements-grid-container h2
 {
   font-size: 60px;
   font-family: serif;
@@ -627,7 +622,7 @@ border: none;
   text-align: center;
 }
 
-.attractions-row
+.achievements-row
 {
   background-color: rgb(153, 255, 187,0.5);
   margin: 10px 25px;
@@ -637,7 +632,7 @@ border: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
 }
 
-.attractions-content img
+.achievements-content img
 {
   float: left;
   width: 20%;
@@ -645,14 +640,14 @@ border: none;
   margin: 30px;
 }
 
-.attractions-content h1
+.achievements-content h1
 {
   font-size: 60px;
   font-family: serif;
   color: rgb(3, 0, 0)
 }
 
-.attractions-content h5
+.achievements-content h5
 {
   font-size: 1.4em;
   font-family: monospace;
@@ -663,7 +658,7 @@ border: none;
   padding: 7px;
 }
 
-.attractions-content a
+.achievements-content a
 {
   position: relative;
   margin-top: 20px;
@@ -677,7 +672,7 @@ border: none;
   padding: 10px 15px;
 }
 
-.attractions-content p
+.achievements-content p
 {
   font-size: 20px;
   font-family: 'Baloo Thambi 2', cursive;

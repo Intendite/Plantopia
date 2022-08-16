@@ -2,7 +2,7 @@
 
 const btnHam = document.querySelector('.ham-btn');
 const btnTimes = document.querySelector('.times-btn');
-const navBar = document.getElementById('nav-bar');
+const navBar = document.getElementById('Nav-Bar');
 
 btnHam.addEventListener('click', function()
 {

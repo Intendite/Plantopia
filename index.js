@@ -13,8 +13,7 @@ const db = admin.firestore();
 app.use(express.json());
 
 require("./routes/main")(app);
-app.use(express.static(__dirname + "/stylesheet"));
-app.use(express.static(__dirname + "/images"));
+app.use(express.static(__dirname + "/stylesheet/style.css"));
 
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
