@@ -1,82 +1,81 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <!-- Page Title -->
+        <title> Plantopia - Achievement Page </title>
+        <!-- Metadata -->
+        <meta charset = "utf-8">
+        <meta name = "author" content = "ASP Team 109">
+        <meta name = "description" content = "Login page for users">
+        <meta name = "refresh" content = "600">
+        <!-- To allow better viewing on mobile devices -->
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <link rel = "stylesheet" type = "text/css" href = "/stylesheet/style.css">
+        <link rel = "preconnect" href = "https://drive.google.com/">
+    </head>
+    
+    <body>
+        <header>
+            <div class = "navigation-container">
+                <div class = "top-head">
+                    <div class = "web-name">
+                        <a href = "Home.html"><img src = "https://drive.google.com/uc?id=1kcM09i9VVKkjatP_R2CIH65m5zlbXe2D"></a>
+                    </div>
 
-<html lang="en" dir="ltr">
-    <html class="no-js">
-        <head>
-            <!-- Page Title -->
-            <title> Plantopia - Achievement Page </title>
-            <!-- Metadata -->
-            <meta charset = "utf-8">
-            <meta name = "author" content = "ASP Team 109">
-            <meta name = "description" content = "Login page for users">
-            <meta name = "refresh" content = "600">
-            <!-- To allow better viewing on mobile devices -->
-            <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-            <link rel = "stylesheet" type = "text/css" href = "/stylesheet/style.css">
-            <link rel = "preconnect" href = "https://drive.google.com/">
-        </head>
-  <body>
-    <header>
-        <div class = "navigation-container">
-            <div class = "top-head">
-                <div class = "web-name">
-                    <a href="Home.html"><img src="https://drive.google.com/uc?id=1kcM09i9VVKkjatP_R2CIH65m5zlbXe2D"></a>
+                    <div class = "ham-btn">
+                        <span>
+                                <i class = "fas fa-bars"></i>
+                        </span>
+                    </div>
+                    <div class = "times-btn">
+                        <span>
+                            <i class = "fas fa-times"></i>
+                        </span>
+                    </div>
                 </div>
-
-                <div class = "ham-btn">
-                    <span>
-                         <i class = "fas fa-bars"></i>
-                    </span>
-                </div>
-                <div class = "times-btn">
-                    <span>
-                        <i class = "fas fa-times"></i>
-                    </span>
+                
+                <!-- Navigation Bar -->
+                <div class = "Nav-Bar" id = "Nav-Bar">
+                    <nav>
+                        <ul>
+                            <li><a href = "Home.html">Home</a></li>
+                            <li><a href = "Plants.html">Plants</a></li>
+                            <li><a href = "Achievements.html">Achievements</a></li>
+                            <li><a href = "Shops.html">Shops</a></li>
+                            <li><a href = "Reminders.html">Reminders</a></li>
+                            <li><a href = "History.html">History</a></li>
+                            <li class = "active"><a href = "Login.html">Log In</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            
-            <!-- Navigation Bar -->
-            <div class = "Nav-Bar" id = "Nav-Bar">
-                <nav>
-                    <ul>
-                        <li><a href="Home.html">Home</a></li>
-                        <li><a href="Plants.html">Plants</a></li>
-                        <li><a href="Achievements.html">Achievements</a></li>
-                        <li><a href="Shops.html">Shops</a></li>
-                        <li><a href="Reminders.html">Reminders</a></li>
-                        <li><a href="History.html">History</a></li>
-                        <li class="active"><a href="Login.html">Log In</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-        <div class="center">
+        </header>
+
+        <div class = "center">
             <h1>Login</h1>
-            <form method="post">
-        <div class="loginF">
-            <input type="text" required>
-            <span></span>
-            <label>Username</label>
-        </div>
-        <div class="loginF">
-            <input type="password" required>
-            <span></span>
-            <label>Password</label>
-        </div>
-        <div class="pass">Forgot Password?</div>
-            <input type="submit" value="Login">
-        <div class="signup">
-            Not a member yet? <a href="signup.html"></i>Sign Up</a>
-        </div>
-      </form>
-    </div>
+            <form method = "post">
+                <div class = "loginF">
+                    <input type = "text" required>
+                    <span></span>
+                    <label>Username</label>
+                </div>
 
-  </body>
-</html>
-        
-        
-        <script src = "script.js"async defer></script>
+                <div class = "loginF">
+                    <input type = "password" required>
+                    <span></span>
+                    <label>Password</label>
+                </div>
+
+                <div class = "pass">Forgot Password?</div>
+
+                <input type = "submit" value = "Login">
+
+                <div class="signup">
+                    Not a member yet? <a href = "signup.html"></i>Sign Up</a>
+                </div>
+            </form>
+        </div>
+        <script src = "script.js" async defer></script>
     </body>
 </html>
 
