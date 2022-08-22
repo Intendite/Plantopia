@@ -1,3 +1,5 @@
+export {db};
+
 const express = require("express");
 const app = express();
 
@@ -25,19 +27,19 @@ app.engine("html", require("ejs").renderFile);
 //     data.forEach(item => console.log(item.get("userName")));
 //  });
 
-function addPlant(){
+// function addPlant(){
     
-    // Add a new user with a generated id.
-    const res = await db.collection('Users').collection('Plants').add({
-        plantID: document.getElementById('plantID')
-    });
+//     // Add a new user with a generated id.
+//     const res = await db.collection('Users').collection('Plants').add({
+//         plantID: document.getElementById('plantID')
+//     });
     
-    console.log('Added User with ID: ', res.id);index.js 
-}
+//     console.log('Added User with ID: ', res.id);index.js 
+// }
 
  ///// LAST LINE ////////////////////////////////////////////
 
- const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server is running on PORT ${PORT}.`);
 });

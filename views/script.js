@@ -1,4 +1,4 @@
-
+import {db} from './index.js';
 
 const btnHam = document.querySelector('.ham-btn');
 const btnTimes = document.querySelector('.times-btn');
@@ -59,5 +59,11 @@ for(i = 0; i < len; i++){
     })
 }
 
-
-
+function getPlants(){
+    // const plantsRef = db.collection('Plants');
+    // const snapshot = plantsRef.get();
+    // snapshot.forEach(doc => {
+    //     console.log(doc.id, '=>', doc.data());
+    // });
+    alert("helo");
+}
