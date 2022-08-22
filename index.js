@@ -1,45 +1,42 @@
-export {db};
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+import { initializeAnalytics, getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
+import {
+    getFirestore,
+    doc,
+    setDoc,
+    collection,
+    addDoc,
+    getDoc,
+    onSnapshot,
+    query,
+    where,
+    getDocs,
+    orderBy,
+    limit,
+} from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 
-const express = require("express");
-const app = express();
+const firebaseConfig = {
+    apiKey: "AIzaSyBvjz8rUCZe93G7ajUTTNkkNqKwCI5gcZk",
+    authDomain: "plantopia-90b99.firebaseapp.com",
+    projectId: "plantopia-90b99",
+    storageBucket: "plantopia-90b99.appspot.com",
+    messagingSenderId: "753505805986",
+    appId: "1:753505805986:web:e6ab978db3dc08221919fb",
+    measurementId: "G-QT0KZYEJFX"
+  };
 
-const admin = require("firebase-admin");
-const credentials = require("./serviceAccountKey.json");
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const db = getFirestore(app);
 
-admin.initializeApp({
-    credential: admin.credential.cert(credentials)
-});
+async function getPlants(){
+    const getPlantsQuery = query(
+        collection(firestore, 'Plants')
+    );
 
-const db = admin.firestore();
-
-app.use(express.json());
-
-require("./routes/main")(app);
-app.use(express.static(__dirname + "/stylesheet/style.css"));
-
-app.set("views", __dirname + "/views");
-app.set("view engine", "ejs");
-app.engine("html", require("ejs").renderFile);
-
-////// APIs for CRUD Operations ///////////////////////////////////////
-
-// const snapshot = db.collection('Users').get().then(data => {
-//     data.forEach(item => console.log(item.get("userName")));
-//  });
-
-// function addPlant(){
-    
-//     // Add a new user with a generated id.
-//     const res = await db.collection('Users').collection('Plants').add({
-//         plantID: document.getElementById('plantID')
-//     });
-    
-//     console.log('Added User with ID: ', res.id);index.js 
-// }
-
- ///// LAST LINE ////////////////////////////////////////////
-
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-    console.log(`Server is running on PORT ${PORT}.`);
-});
+    const querySnapshot = await getDocs(getPlantsQuery);
+    const allDocs = querySnapshot.forEach((snap) => {
+        console.log(`Document ${snap.id} contains ${JSON.stringify(snap.data())}`);
+    });
+}

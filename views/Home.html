@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <head onload="getPlants()">
+    <head>
         <!-- Page Title -->
         <title>Plantopia</title>
         <!-- Metadata -->
@@ -10,14 +10,14 @@
         <!-- To allow better viewing on mobile devices -->
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <link rel = "stylesheet" type = "text/css" href = "/stylesheet/style.css">
-        <link rel = "preconnect" href = "https://drive.google.com/">
+        <script type = "module" src = "./script.js" async defer></script>
+        <script type = "module" src = "../index.js" async defer></script>
     </head>
 
     <body>
-        <!--header-->
+        <!-- Header -->
         <header>
             <div class = "navigation-container">
-                
                 <div class = "top-head">
                     <div class = "web-name">
                         <a href = "Home.html"><img src = "https://drive.google.com/uc?id=1kcM09i9VVKkjatP_R2CIH65m5zlbXe2D"></a>
@@ -39,31 +39,27 @@
                 <div class = "Nav-Bar" id = "Nav-Bar">
                     <nav>
                         <ul>
-                            <li class="active"><a href="Home.html">Home</a></li>
-                            <li><a href="Plants.html">Plants</a></li>
-                            <li><a href="Achievements.html">Achievements</a></li>
-                            <li><a href="Shops.html">Shops</a></li>
-                            <li><a href="Reminders.html">Reminders</a></li>
-                            <li><a href="History.html">History</a></li>
-                            <li><a href="Login.html">Log In</a></li>
+                            <li class = "active"><a href = "Home.html">Home</a></li>
+                            <li><a href = "Plants.html">Plants</a></li>
+                            <li><a href = "Achievements.html">Achievements</a></li>
+                            <li><a href = "Shops.html">Shops</a></li>
+                            <li><a href = "Reminders.html">Reminders</a></li>
+                            <li><a href = "History.html">History</a></li>
+                            <li><a href = "Login.html">Log In</a></li>
                         </ul>
                     </nav>
                 </div>
-
             </div>
         </header>
 
-        <section class="headerhome">
-
-            <div class="text-box">
+        <section class = "headerhome">
+            <div class = "text-box">
                 <h1>Welcome to Plantopia</h1>
-                <p style="text-align: center;">
+                <p style = "text-align: center;">
                     Want to get into gardening? Come check out all these plants available on our website <br>Plantopia and make your gardening journey an easy and joyful one. 
                 </p>
-                <a href="Plants.html" class="bottomText">Get Your Plant</a>
+                <a href = "Plants.html" class = "bottomText">Get Your Plant</a>
             </div>
-
         </section>
-        <script type = "module" src = "script.js" async defer></script>
     </body>
 </html>

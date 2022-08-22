@@ -1,22 +1,33 @@
 {
   "name": "plantopia",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@firebase/util": "^1.6.3",
     "@google-cloud/firestore": "^6.0.0",
+    "analytics": "^0.8.1",
+    "async-loader-cdn": "^1.2.1",
     "cors": "^2.8.5",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
-    "firebase": "^9.9.2",
+    "firebase": "^9.9.3",
     "firebase-admin": "^11.0.1",
     "firebase-functions": "^3.22.0",
     "nodemon": "^2.0.19"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Intendite/Plantopia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Intendite/Plantopia/issues"
+  },
+  "homepage": "https://github.com/Intendite/Plantopia#readme",
+  "description": ""
 }
