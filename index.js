@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-import { initializeAnalytics, getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
+//import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
 import {
     getFirestore,
     doc,
@@ -23,14 +23,16 @@ const firebaseConfig = {
     messagingSenderId: "753505805986",
     appId: "1:753505805986:web:e6ab978db3dc08221919fb",
     measurementId: "G-QT0KZYEJFX"
-  };
+};
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const db = getFirestore(app);
 
-async function getPlants(){
+const app = initializeApp(firebaseConfig);
+//const analytics = getAnalytics(app);
+const db = getFirestore(app);
+const firestore = getFirestore();
+
+window.onload = async function getPlants(){
     const getPlantsQuery = query(
         collection(firestore, 'Plants')
     );
