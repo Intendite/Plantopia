@@ -39,10 +39,13 @@ window.onload = async function getPlants(){
 
     const querySnapshot = await getDocs(getPlantsQuery);
     const allDocs = querySnapshot.forEach((snap) => {
-        console.log(`Document ${snap.id} contains ${JSON.stringify(snap.data())}`);
         var selectPlants = document.getElementById("plantID");
         var plantOptions = [];
-        plantOptions.push(JSON.stringify(snap.data()));
+        var JSONData = JSON.stringify(snap.data());
+        var JSONObject = JSON.parse(JSONData);
+        var plantName = JSONObject.plantName;
+
+        plantOptions.push(plantName);
 
         for (var i = 0; i < plantOptions.length; ++i){
             var opt = plantOptions[i];
@@ -52,4 +55,71 @@ window.onload = async function getPlants(){
             selectPlants.appendChild(ele);
         }
     });
+}
+
+window.onload = async function getAchievements(){
+    // const getAchievementsQuery = query(
+    //     collection(firestore, 'Users/Achievement/achievementID')
+    // );
+
+    const achievementRef = db.collection("Achievements");
+    const snapshot = await achievementRef.get();
+    snapshot.forEach((doc) => {
+        console.log(doc);
+    })
+
+    // const querySnapshot = await getDocs(getAchievementsQuery);
+
+    // const allDocs = querySnapshot.forEach((snap) => {
+    //     console.log(`Document ${snap.id} contains ${JSON.stringify(snap.data())}`);
+
+    //     var typePlants = document.getElementById("panelPlants");
+    //     var typeHydration = document.getElementById("panelHydration");
+    //     var typeUpdates = document.getElementById("panelUpdates");
+
+    //     var plantOptions = [];
+    //     var hydrationOptions = [];
+    //     var updatesOptions = [];
+
+    //     var JSONData = JSON.stringify(snap.data());
+    //     var JSONObject = JSON.parse(JSONData);
+    //     var achievementType = JSONObject.achievementType;
+
+    //     if (achievementType == "Plants"){
+    //         plantOptions.push(JSON.stringify(snap.data()));
+    //     }
+
+    //     if (achievementType == "Hydration"){
+    //         hydrationOptions.push(JSON.stringify(snap.data()));
+    //     }
+
+    //     if (achievementType == "Updates"){
+    //         updatesOptions.push(JSON.stringify(snap.data()));
+    //     }
+
+    //     for (var i = 0; i < plantOptions.length; ++i){
+    //         var opt = plantOptions[i];
+    //         var ele = document.createElement("div");
+    //         ele.textContent = opt;
+    //         ele.value = opt;
+    //         typePlants.appendChild(ele);
+    //     }
+
+    //     for (var i = 0; i < plantOptions.length; ++i){
+    //         var opt = plantOptions[i];
+    //         var ele = document.createElement("div");
+    //         ele.textContent = opt;
+    //         ele.value = opt;
+    //         typeHydration.appendChild(ele);
+    //     }
+
+    //     for (var i = 0; i < plantOptions.length; ++i){
+    //         var opt = plantOptions[i];
+    //         var ele = document.createElement("div");
+    //         ele.textContent = opt;
+    //         ele.value = opt;
+    //         typeUpdates.appendChild(ele);
+    //     }
+
+    // });
 }

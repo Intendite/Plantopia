@@ -691,7 +691,27 @@ border: none;
   color:white;
 }
 
-.panel
+.panelPlants
+{
+  text-align: justify;
+  overflow: hidden;
+  max-height: 0px;
+  transition: all .2s ease-in;
+  border-radius: 25px;
+  margin-right: 20px; 
+}
+
+.panelHydration
+{
+  text-align: justify;
+  overflow: hidden;
+  max-height: 0px;
+  transition: all .2s ease-in;
+  border-radius: 25px;
+  margin-right: 20px; 
+}
+
+.panelUpdates
 {
   text-align: justify;
   overflow: hidden;
