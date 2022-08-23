@@ -1,11 +1,9 @@
-//import {db} from './index.js';
-
 const btnHam = document.querySelector('.ham-btn');
 const btnTimes = document.querySelector('.times-btn');
 const navBar = document.getElementById('Nav-Bar');
-const carousel = new Carousel({
-    root: document.querySelector('.carousel'),
-  });
+// const carousel = new Carousel({
+//     root: document.querySelector('.carousel'),
+//   });
 
 btnHam.addEventListener('click', function()
 {

@@ -670,50 +670,6 @@ border: none;
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap');
 /* PERFORMANCES */
-.performance-grid-container
-{
-  display: grid;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
-.performance-grid-container h2
-{
-  font-size: 50px;
-  font-family: serif;
-  position: relative;
-  text-align: center;
-}
-
-.performances
-{
-  position: bottom;
-  float: left;
-  background-color: rgb(168, 227, 169);
-  /*background-color: black;*/
-  margin: 10px 25px;
-  border-radius: 10px;
-}
-
-.performances img
-{
-  float: left;
-  height: 300px;
-  width: 300px;
-  margin: 20px 20px 20px 20px;
-}
-
-.performances h1
-{
-  font-size: 50px;
-  font-family: serif;
-  color: rgb(11, 5, 5)
-}
-
-.performances h3
-{
-  color: rgb(48, 17, 17);
-}
 
 .performances h5
 {

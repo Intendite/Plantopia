@@ -32,19 +32,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const firestore = getFirestore();
 
-function tokenisePlants(JSONString){
-    var obj = JSON.parse(JSONString);
-    var Accel_A = obj.plantName.replace(",", "");
-    var Accel_B = obj.plantID.replace(",", "");
-    var Accel_C = obj.plantType.replace(",", "");
-    var Accel_D = obj.plantTaskID.replace(",", "");
-    var Accel_E = obj.plantDos.replace(",", "");
-    var Accel_F = obj.plantDonts.replace(",", "");
-    var Accel_G = obj.plantDescription.replace(",", "");
-
-    return (Accel_A, Accel_B, Accel_C, Accel_D, Accel_E, Accel_F, Accel_G);
-}
-
 window.onload = async function getPlants(){
     const getPlantsQuery = query(
         collection(firestore, 'Plants')
@@ -52,7 +39,17 @@ window.onload = async function getPlants(){
 
     const querySnapshot = await getDocs(getPlantsQuery);
     const allDocs = querySnapshot.forEach((snap) => {
-        console.log(tokenisePlants(JSON.stringify(snap.data())));
-        //console.log(`Document ${snap.id} contains ${JSON.stringify(snap.data())}`);
+        console.log(`Document ${snap.id} contains ${JSON.stringify(snap.data())}`);
+        var selectPlants = document.getElementById("plantID");
+        var plantOptions = [];
+        plantOptions.push(JSON.stringify(snap.data()));
+
+        for (var i = 0; i < plantOptions.length; ++i){
+            var opt = plantOptions[i];
+            var ele = document.createElement("option");
+            ele.textContent = opt;
+            ele.value = opt;
+            selectPlants.appendChild(ele);
+        }
     });
 }
