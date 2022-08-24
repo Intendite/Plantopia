@@ -291,7 +291,7 @@ p
   text-align: justify;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+
 *{
 margin: 0;
 padding: 0;
@@ -301,7 +301,7 @@ font-family: "Poppins", sans-serif;
 body{
 margin: 0;
 padding: 0;
-background: linear-gradient(120deg,#0a2538, #381149);
+background: linear-gradient(120deg,#e8eaeb, #97e9b2);
 height: 100vh;
 
 }
@@ -853,6 +853,11 @@ font-size: 20px;
 }
 select option{
 font-size: 20px;
+}
+
+.histcont{
+
+  background-color: #000;
 }
 
 .history-grid-container
