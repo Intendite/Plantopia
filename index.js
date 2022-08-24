@@ -37,8 +37,8 @@ window.onload = async function getPlants(){
         collection(firestore, 'Plants')
     );
 
-    const querySnapshot = await getDocs(getPlantsQuery);
-    const allDocs = querySnapshot.forEach((snap) => {
+    const queryPlantSnapshot = await getDocs(getPlantsQuery);
+    const allDocs = queryPlantSnapshot.forEach((snap) => {
         var selectPlants = document.getElementById("plantID");
         var plantOptions = [];
         var JSONData = JSON.stringify(snap.data());
@@ -58,68 +58,75 @@ window.onload = async function getPlants(){
 }
 
 window.onload = async function getAchievements(){
-    // const getAchievementsQuery = query(
-    //     collection(firestore, 'Users/Achievement/achievementID')
-    // );
+    // Pulling Achievements that are Plants type from Firebase
+    const getPlantAchievementsQuery = query(
+        collection(firestore, 'Achievements'), where("achievementType", "==", "Plants")
+    );
 
-    const achievementRef = db.collection("Achievements");
-    const snapshot = await achievementRef.get();
-    snapshot.forEach((doc) => {
-        console.log(doc);
-    })
+    const queryPlantSnapshot = await getDocs(getPlantAchievementsQuery);
+    const allPlantDocs = queryPlantSnapshot.forEach((snap) => {
+        var selectPlantAchievements = document.getElementById("panelPlants");
+        var achievementOptions = [];
+        var JSONData = JSON.stringify(snap.data());
+        var JSONObject = JSON.parse(JSONData);
+        var achievementName = JSONObject.achievementName;
 
-    // const querySnapshot = await getDocs(getAchievementsQuery);
+        achievementOptions.push(achievementName);
 
-    // const allDocs = querySnapshot.forEach((snap) => {
-    //     console.log(`Document ${snap.id} contains ${JSON.stringify(snap.data())}`);
+        for (var i = 0; i < achievementOptions.length; ++i){
+            var opt = achievementOptions[i];
+            var ele = document.createElement("p");
+            ele.textContent = opt;
+            ele.value = opt;
+            selectPlantAchievements.appendChild(ele);
+        }
+    });
 
-    //     var typePlants = document.getElementById("panelPlants");
-    //     var typeHydration = document.getElementById("panelHydration");
-    //     var typeUpdates = document.getElementById("panelUpdates");
+    // Pulling Achievments that are Hydartion type from Firebase
+    const getHydrationAchievementsQuery = query(
+        collection(firestore, 'Achievements'), where("achievementType", "==", "Hydration")
+    );
 
-    //     var plantOptions = [];
-    //     var hydrationOptions = [];
-    //     var updatesOptions = [];
+    const queryHydrationSnapshot = await getDocs(getHydrationAchievementsQuery);
+    const allHydrationDocs = queryHydrationSnapshot.forEach((snap) => {
+        var selectPlantAchievements = document.getElementById("panelHydration");
+        var achievementOptions = [];
+        var JSONData = JSON.stringify(snap.data());
+        var JSONObject = JSON.parse(JSONData);
+        var achievementName = JSONObject.achievementName;
 
-    //     var JSONData = JSON.stringify(snap.data());
-    //     var JSONObject = JSON.parse(JSONData);
-    //     var achievementType = JSONObject.achievementType;
+        achievementOptions.push(achievementName);
 
-    //     if (achievementType == "Plants"){
-    //         plantOptions.push(JSON.stringify(snap.data()));
-    //     }
+        for (var i = 0; i < achievementOptions.length; ++i){
+            var opt = achievementOptions[i];
+            var ele = document.createElement("p");
+            ele.textContent = opt;
+            ele.value = opt;
+            selectPlantAchievements.appendChild(ele);
+        }
+    });
 
-    //     if (achievementType == "Hydration"){
-    //         hydrationOptions.push(JSON.stringify(snap.data()));
-    //     }
+    // Pulling Achievments that are Hydartion type from Firebase
+    const getUpdatesAchievementsQuery = query(
+        collection(firestore, 'Achievements'), where("achievementType", "==", "Tasks")
+    );
 
-    //     if (achievementType == "Updates"){
-    //         updatesOptions.push(JSON.stringify(snap.data()));
-    //     }
+    const queryUpdatesSnapshot = await getDocs(getUpdatesAchievementsQuery);
+    const allUpdatesDocs = queryUpdatesSnapshot.forEach((snap) => {
+        var selectPlantAchievements = document.getElementById("panelTasks");
+        var achievementOptions = [];
+        var JSONData = JSON.stringify(snap.data());
+        var JSONObject = JSON.parse(JSONData);
+        var achievementName = JSONObject.achievementName;
 
-    //     for (var i = 0; i < plantOptions.length; ++i){
-    //         var opt = plantOptions[i];
-    //         var ele = document.createElement("div");
-    //         ele.textContent = opt;
-    //         ele.value = opt;
-    //         typePlants.appendChild(ele);
-    //     }
+        achievementOptions.push(achievementName);
 
-    //     for (var i = 0; i < plantOptions.length; ++i){
-    //         var opt = plantOptions[i];
-    //         var ele = document.createElement("div");
-    //         ele.textContent = opt;
-    //         ele.value = opt;
-    //         typeHydration.appendChild(ele);
-    //     }
-
-    //     for (var i = 0; i < plantOptions.length; ++i){
-    //         var opt = plantOptions[i];
-    //         var ele = document.createElement("div");
-    //         ele.textContent = opt;
-    //         ele.value = opt;
-    //         typeUpdates.appendChild(ele);
-    //     }
-
-    // });
+        for (var i = 0; i < achievementOptions.length; ++i){
+            var opt = achievementOptions[i];
+            var ele = document.createElement("p");
+            ele.textContent = opt;
+            ele.value = opt;
+            selectPlantAchievements.appendChild(ele);
+        }
+    });
 }
