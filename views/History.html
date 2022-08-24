@@ -10,6 +10,7 @@
         <meta name = "refresh" content = "600">
         <!-- To allow better viewing on mobile devices -->
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
         <link rel = "stylesheet" type = "text/css" href = "/stylesheet/style.css">
     </head>
 
@@ -50,36 +51,61 @@
                     </div>
                 </div>
             </header>
+
+            <div class = "reminder-row">
+                <h1>History</h1>    
+            </div>
+
             
-            <section class = "histcont">
-            <div class = "history-grid-container">
-                <h1>History</h1>
-            </div>
 
-            <div class = "history-row">
-                <h1 contenteditable = "true">Day/Date(editable)</h1>    
-            </div>
+            <table class="ui celled table">
+                <thead>
+                  <tr><th>Day/Date</th>
+                  <th>Plant</th>
+                  <th>Activity</th>
+                </tr></thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Day/Date">Monday</td>
+                    <td data-label="Plant">Nil</td>
+                    <td data-label="Activity">Nil</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Day/Date">Tuesday</td>
+                    <td data-label="Plant">Nil</td>
+                    <td data-label="Activity">Nil</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Day/Date">Wednesday</td>
+                    <td data-label="Plant">Nil</td>
+                    <td data-label="Activity">Nil</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Day/Date">Thursday</td>
+                    <td data-label="Plant">Nil</td>
+                    <td data-label="Activity">Nil</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Day/Date">Friday</td>
+                    <td data-label="Plant">Nil</td>
+                    <td data-label="Activity">Nil</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Day/Date">Saturday</td>
+                    <td data-label="Plant">Nil</td>
+                    <td data-label="Activity">Nil</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Day/Date">Sunday</td>
+                    <td data-label="Plant">Nil</td>
+                    <td data-label="Activity">Nil</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
 
-            <div class = "history-row2">
-                <h1 contenteditable = "true">Time</h1>    
-            </div>
 
-            <div class = "history-row3">
-                <h1 contenteditable = "true">Activity</h1>    
-            </div>
 
-            <div class = "history-row4">
-                <h1 contenteditable = "true">Time</h1>    
-            </div>
-
-            <div class = "history-row5">
-                <h1 contenteditable = "true">Activity</h1>    
-            </div> 
-
-            <div class = "history-row6">
-                <h1 contenteditable = "true">Day/Date(editable)</h1>    
-            </div> 
-        </div>
 
         <script src = "script.js" async defer></script>
     </body>

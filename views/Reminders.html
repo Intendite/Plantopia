@@ -10,6 +10,7 @@
         <meta name = "refresh" content = "600">
         <!-- To allow better viewing on mobile devices -->
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
         <link rel = "stylesheet" type = "text/css" href = "/stylesheet/style.css">
     </head>
     
@@ -58,37 +59,68 @@
             <h1>Plant Schedule</h1>    
         </div>
 
-        <table id = "customers">
-            <tr>
-                <td>Monday</td>   
-                <td>Tuesday</td>   
-                <td>Wednesday</td>   
-                <td>Thursday</td>   
-                <td>Friday</td>   
-                <td>Saturday</td>   
-                <td>Sunday</td>
-            </tr>
+        <table class="ui celled table">
+            <thead>
+            <tr><th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+            </tr></thead>
+            <tbody>
+              <tr>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+              </tr>
+              <tr>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+              </tr>
+              <tr>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+              </tr>
+              <tr>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+              </tr>
+              <tr>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+              </tr>
 
-            <tr>
-                <td contenteditable = "true">Editable</td>
-                <td contenteditable = "true">Editable</td>
-                <td contenteditable = "true">Editable</td>
-                <td contenteditable = "true">Editable</td>
-                <td contenteditable = "true">Editable</td>
-                <td contenteditable = "true">Editable</td>
-                <td contenteditable = "true">Editable</td>
-            </tr>
+              
+            </tbody>
+          </table>
 
-            <tr>
-                <td contenteditable = "true">Editable</td>
-                <td contenteditable = "true">Editable</td>
-                <td contenteditable = "true">Editable</td>
-                <td contenteditable = "true">Editable</td>
-                <td contenteditable = "true">Editable</td>
-                <td contenteditable = "true">Editable</td>
-                <td contenteditable = "true">Editable</td>
-            </tr>
-        </table>
+        
         <script src = "script.js" async defer></script>
     </body>
 </html>

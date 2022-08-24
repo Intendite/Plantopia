@@ -10,7 +10,7 @@
 
 body{
   font-family:'Lato', sans-serif;
-  background: #fff;
+  background: linear-gradient(120deg,#e8eaeb, #97e9b2);
 }
 /* 
 global styling */
@@ -303,7 +303,6 @@ margin: 0;
 padding: 0;
 background: linear-gradient(120deg,#e8eaeb, #97e9b2);
 height: 100vh;
-
 }
 .center{
 position: absolute;
@@ -855,142 +854,53 @@ select option{
 font-size: 20px;
 }
 
-.histcont{
 
-  background-color: #000;
+
+
+.banner-sub-content{
+  margin: 20px;
 }
 
-.history-grid-container
-{
-    display: grid;
-    grid-template-columns: auto;
+.top-topic{
+  background-color:#e5f8dd;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 12px;
+  height: 300px;
+  opacity: 0.8;
+  transition: opacity 1s, background 1s;
+
 }
 
-.history-grid-container h1
-
-  {
-    font-size: 60px;
-    font-family: Comic;
-    position: relative;
-    text-align: center;
+.top-topic-content{
+  position: absolute;
+  bottom: 10;
+  left: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  line-height: 1.3;
+  color: #963c3c;
 }
 
-.history-row
-{
-  background-color: rgb(153, 255, 187,0.5);
-  margin: 10px 25px;
-  border-radius: 25px;
-  padding: 20px;
-  min-height: 5vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+.top-topic h2{
+  padding: 10px 0;
+  font-size: 25px;
+  text-shadow: 0 0 2px #000;
 }
 
-.history-row h1
-{
-  font-size: 30px;
-    font-family: Comic;
-    color: rgb(0, 0, 0);
-    text-align: center;
+.top-topic h3 {
+  padding: 10px 0;
+  font-size: 16px;
+  text-shadow: 0 0 2px #000;
+  
 }
 
-.history-row2
-{
-  position: absolute;left:30px;
-  background-color: rgb(153, 255, 187,0.5);
-  margin:auto;
-  border-radius: 25px;
-  padding: 50px;
-  min-width:75vh;
-  min-height: 5vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+.top-topic:hover {
+  opacity: 1;
+  transition: opacity 1s, background 1s;
+
 }
 
-.history-row2 h1
-{
-  font-size: 30px;
-    font-family: Comic;
-    color: rgb(0, 0, 0);
-    text-align: center;
-}
-
-.history-row3
-{
-  position: absolute;right:30px;
-  background-color: rgb(153, 255, 187,0.5);
-  margin:auto;
-  border-radius: 25px;
-  padding: 50px;
-  min-width:95vh;
-  min-height: 5vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-}
-
-.history-row3 h1
-{
-  font-size: 30px;
-    font-family: Comic;
-    color: rgb(0, 0, 0);
-    text-align: center;
-}
-.history-row4
-{
-  position: absolute;left:30px; top: 425px;
-  background-color: rgb(153, 255, 187,0.5);
-  margin:auto;
-  border-radius: 25px;
-  padding: 50px;
-  min-width:75vh;
-  min-height: 5vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-}
-
-.history-row4 h1
-{
-  font-size: 30px;
-    font-family: Comic;
-    color: rgb(0, 0, 0);
-    text-align: center;
-}
-
-.history-row5
-{
-  position: absolute;right:30px; top:425px;
-  background-color: rgb(153, 255, 187,0.5);
-  margin:auto;
-  border-radius: 25px;
-  padding: 50px;
-  min-width:95vh;
-  min-height: 5vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-}
-
-.history-row5 h1
-{
-  font-size: 30px;
-    font-family: Comic;
-    color: rgb(0, 0, 0);
-    text-align: center;
-}
-
-
-.history-row6
-{
-  position: absolute; top:575px;
-  background-color: rgb(153, 255, 187,0.5);
-  margin: 10px 25px;
-  border-radius: 25px;
-  padding: 20px;
-  min-width:173vh;
-  min-height: 5vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-}
-
-.history-row6 h1
-{
-  font-size: 30px;
-    font-family: Comic;
-    color: rgb(0, 0, 0);
-    text-align: center;
-}
 
 
