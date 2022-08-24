@@ -11,7 +11,7 @@
         <!-- To allow better viewing on mobile devices -->
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <link rel = "stylesheet" type = "text/css" href = "/stylesheet/style.css">
-        <script type = "module" src = "../index.js"></script>
+        <script type = "module" src = "../functions/plantPage.js"></script>
     </head>
 
     <body>
@@ -61,9 +61,9 @@
 
         <div class = "addPlants">
             <form method = "POST" action = "/added-plant" onsubmit = "addPlant()">
-                <label for = "plantID"><h1>Choose a plant:</h1></label>
+                <label><h1>Choose a plant:</h1></label>
                     <h1>
-                        <select id="plantID">
+                        <select id = "plantID">
                             <!-- <option value="1">Jade Plant</option>
                             <option value="2">Pong Pong</option>
                             <option value="3">Sun Dew</option>
