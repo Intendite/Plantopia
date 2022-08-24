@@ -1013,3 +1013,40 @@ font-size: 20px;
 }
 
 
+/*Shop Style*/
+
+.col-sm-4 div{
+  padding: 50px
+}
+.col-sm-4 div p{
+  text-align: justify;
+}
+.col-sm-4 div h3{
+  border-bottom: 1px solid #000;
+  padding-bottom: 10px;
+  margin-top: 30px;
+}
+
+.carousel-inner .item:nth-child(1){
+  background:#f39c12
+}
+
+.carousel-inner .item:nth-child(2){
+  background:#00cec9
+}
+
+.carousel-inner .item:nth-child(3){
+  background:#ffc312
+}
+
+.carousel-inner .item:nth-child(4){
+  background:#fd89a8
+}
+
+.carousel-inner .item:nth-child(5){
+  background:#18e2f9
+}
+
+.carousel-inner .item:nth-child(6){
+  background:#ff10cb
+}
