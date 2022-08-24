@@ -52,26 +52,27 @@
             </div>
         </header>
 
-  
-        <div class="PlantDropdown">
+        <div class = "plant-grid-container">
+            <h1>Plants</h1>
 
+            <!-- add a Show user's plants section -->
 
+        </div>
 
-            <form method="POST" action="/added-plant" onsubmit="addPlant()">
-               <h1>Choose a plant:</h1></label>
+        <div class = "addPlants">
+            <form method = "POST" action = "/added-plant" onsubmit = "addPlant()">
+                <label for = "plantID"><h1>Choose a plant:</h1></label>
                     <h1>
-                        <select>
-                            <option value="1">Jade Plant</option>
+                        <select id="plantID">
+                            <!-- <option value="1">Jade Plant</option>
                             <option value="2">Pong Pong</option>
                             <option value="3">Sun Dew</option>
-                            <option value="4">Wormwood</option>
+                            <option value="4">Wormwood</option> -->
                         </select><br>
-                    
-                <input type="submit" value="Add Plant">
-            </h1>
+                    </h1>
+                <input type = "submit" value = "Add Plant">
             </form>
         </div>
-        
-        <script src = "script.js"async defer></script>
+        <script src = "script.js" async defer></script>
     </body>
 </html>
