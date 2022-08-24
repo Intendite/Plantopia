@@ -1073,4 +1073,25 @@ font-size: 20px;
   transition: background-color 1000ms linear;
 }
 /*Shop Style End*/
-
+/*Plant Style*/
+.PlantDropdown{
+  position: relative;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 200px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  }
+  .PlantDropdown h1{
+  top:20%;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+  }
+  .PlantDropdown form{
+  padding: 0 40px;
+  box-sizing: border-box;
+  }
