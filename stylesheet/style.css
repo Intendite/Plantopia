@@ -301,7 +301,7 @@ font-family: "Poppins", sans-serif;
 body{
 margin: 0;
 padding: 0;
-background: linear-gradient(120deg,#ffffff, #65f67b);
+background:linear-gradient(120deg,#e8eaeb, #97e9b2);;
 height: 100vh;
 
 }
@@ -878,66 +878,66 @@ background-color: rgba(150, 212, 212, 0.4);
 }
 
 .carousel-inner .item:nth-child(1){
-  background-color: rgb(93, 35, 253);
+  background-color: #82cef8;
 }
 
 .carousel-inner .item:nth-child(1):hover {
-  background-color: #e62bff;
+  background-color: #f8829f;
   -webkit-transition: background-color 1000ms linear;
   -ms-transition: background-color 1000ms linear;
   transition: background-color 1000ms linear;
 } 
 
 .carousel-inner .item:nth-child(2){
-  background-color:#00cec9;
+  background-color:#82cef8
 }
 
 .carousel-inner .item:nth-child(2):hover {
-  background-color: #3ef681;
+  background-color: #f8829f;
   -webkit-transition: background-color 1000ms linear;
   -ms-transition: background-color 1000ms linear;
   transition: background-color 1000ms linear;
 }
 
 .carousel-inner .item:nth-child(3){
-  background-color:#ffc312;
+  background-color:#82cef8
 }
 
 .carousel-inner .item:nth-child(3):hover {
-  background-color: #ffb338;
+  background-color:#f8829f;
   -webkit-transition: background-color 1000ms linear;
   -ms-transition: background-color 1000ms linear;
   transition: background-color 1000ms linear;
 }
 
 .carousel-inner .item:nth-child(4){
-  background-color:#fd89a8;
+  background-color:#82cef8
 }
 
 .carousel-inner .item:nth-child(4):hover {
-  background-color: #ff38bd;
+  background-color:#f8829f;
   -webkit-transition: background-color 1000ms linear;
   -ms-transition: background-color 1000ms linear;
   transition: background-color 1000ms linear;
 }
 
 .carousel-inner .item:nth-child(5){
-  background-color:#18e2f9;
+  background-color:#82cef8
 }
 
 .carousel-inner .item:nth-child(5):hover {
-  background-color: #3881ff;
+  background-color: #f8829f;
   -webkit-transition: background-color 1000ms linear;
   -ms-transition: background-color 1000ms linear;
   transition: background-color 1000ms linear;
 }
 
 .carousel-inner .item:nth-child(6){
-  background-color:#ff10cb;
+  background-color:#82cef8
 }
 
 .carousel-inner .item:nth-child(6):hover {
-  background-color: #ff307f;
+  background-color: #f8829f;
   -webkit-transition: background-color 1000ms linear;
   -ms-transition: background-color 1000ms linear;
   transition: background-color 1000ms linear;
