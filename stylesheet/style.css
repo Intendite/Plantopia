@@ -668,52 +668,21 @@ border: none;
   color:black;
 }
 
+select {
+  margin: 50px;
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(https://lh3.googleusercontent.com/oY6ElMn7dLgZR6F__1BsIrwOX2V-f-gDYy2W482Lua-sVa5kSwhK86teCAn8p5_oItjPMHxHXYN810q-vmgECyrc7LvSEeOuFSmzJzesKXnsIplgzIo3fsUJDNST-rvuMcYblFtcfA=w2400) 96% / 15% no-repeat #eee;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap');
 /* PERFORMANCES */
-.performance-grid-container
-{
-  display: grid;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
-.performance-grid-container h2
-{
-  font-size: 50px;
-  font-family: serif;
-  position: relative;
-  text-align: center;
-}
-
-.performances
-{
-  position: bottom;
-  float: left;
-  background-color: rgb(168, 227, 169);
-  /*background-color: black;*/
-  margin: 10px 25px;
-  border-radius: 10px;
-}
-
-.performances img
-{
-  float: left;
-  height: 300px;
-  width: 300px;
-  margin: 20px 20px 20px 20px;
-}
-
-.performances h1
-{
-  font-size: 50px;
-  font-family: serif;
-  color: rgb(11, 5, 5)
-}
-
-.performances h3
-{
-  color: rgb(48, 17, 17);
-}
 
 .performances h5
 {
@@ -735,7 +704,27 @@ border: none;
   color:white;
 }
 
-.panel
+.panelPlants
+{
+  text-align: justify;
+  overflow: hidden;
+  max-height: 0px;
+  transition: all .2s ease-in;
+  border-radius: 25px;
+  margin-right: 20px; 
+}
+
+.panelHydration
+{
+  text-align: justify;
+  overflow: hidden;
+  max-height: 0px;
+  transition: all .2s ease-in;
+  border-radius: 25px;
+  margin-right: 20px; 
+}
+
+.panelUpdates
 {
   text-align: justify;
   overflow: hidden;
@@ -864,6 +853,7 @@ background-color: rgba(150, 212, 212, 0.4);
   font-family: Comic;
   position: relative;
   text-align: center;
+  background: #2691d9;
 }
 
 .Plant
@@ -875,9 +865,7 @@ text-align: center;
 width:150px;   
 font-size: 20px;
 }
-select option{
-font-size: 20px;
-}
+
 
 .history-grid-container
 {
