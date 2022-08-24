@@ -71,6 +71,14 @@ for(i = 0; i < len; i++){
     })
 }
 
+function randomColor() {
+    return '#'+ ('000000' + (Math.random()*0xFFFFFF<<0).toString(16)).slice(-6)
+}
+function setColor(){
+    document.getElementById('myDiv').style.backgroundColor = randomColor();
+    setTimeout(setColor, 2000);
+}
+setColor();
 
 
 

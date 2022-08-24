@@ -301,7 +301,7 @@ font-family: "Poppins", sans-serif;
 body{
 margin: 0;
 padding: 0;
-background: linear-gradient(120deg,#0a2538, #381149);
+background: linear-gradient(120deg,#ffffff, #65f67b);
 height: 100vh;
 
 }
@@ -669,7 +669,7 @@ border: none;
 }
 
 select {
-  margin: 50px;
+  
   width: 150px;
   padding: 5px 35px 5px 5px;
   font-size: 16px;
@@ -840,165 +840,27 @@ background-color: rgba(150, 212, 212, 0.4);
 /*//////////////////// Plant page Start///////////////////*/
 /*////////////////////////////////////////////////////////*/
 
-.plant-grid-container
-{
-  display: grid;
-  grid-template-columns: auto;
-}
-
-.plant-grid-container h1
-
-{
-  font-size: 60px;
-  font-family: Comic;
+.PlantDropdown{
   position: relative;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 200px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  }
+  .PlantDropdown h1{
+  top:20%;
   text-align: center;
-  background: #2691d9;
-}
-
-.Plant
-{
-text-align: center;
-}
-
-#plants{
-width:150px;   
-font-size: 20px;
-}
-
-
-.history-grid-container
-{
-    display: grid;
-    grid-template-columns: auto;
-}
-
-.history-grid-container h1
-
-  {
-    font-size: 60px;
-    font-family: Comic;
-    position: relative;
-    text-align: center;
-}
-
-.history-row
-{
-  background-color: rgb(153, 255, 187,0.5);
-  margin: 10px 25px;
-  border-radius: 25px;
-  padding: 20px;
-  min-height: 5vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-}
-
-.history-row h1
-{
-  font-size: 30px;
-    font-family: Comic;
-    color: rgb(0, 0, 0);
-    text-align: center;
-}
-
-.history-row2
-{
-  position: absolute;left:30px;
-  background-color: rgb(153, 255, 187,0.5);
-  margin:auto;
-  border-radius: 25px;
-  padding: 50px;
-  min-width:75vh;
-  min-height: 5vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-}
-
-.history-row2 h1
-{
-  font-size: 30px;
-    font-family: Comic;
-    color: rgb(0, 0, 0);
-    text-align: center;
-}
-
-.history-row3
-{
-  position: absolute;right:30px;
-  background-color: rgb(153, 255, 187,0.5);
-  margin:auto;
-  border-radius: 25px;
-  padding: 50px;
-  min-width:95vh;
-  min-height: 5vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-}
-
-.history-row3 h1
-{
-  font-size: 30px;
-    font-family: Comic;
-    color: rgb(0, 0, 0);
-    text-align: center;
-}
-.history-row4
-{
-  position: absolute;left:30px; top: 425px;
-  background-color: rgb(153, 255, 187,0.5);
-  margin:auto;
-  border-radius: 25px;
-  padding: 50px;
-  min-width:75vh;
-  min-height: 5vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-}
-
-.history-row4 h1
-{
-  font-size: 30px;
-    font-family: Comic;
-    color: rgb(0, 0, 0);
-    text-align: center;
-}
-
-.history-row5
-{
-  position: absolute;right:30px; top:425px;
-  background-color: rgb(153, 255, 187,0.5);
-  margin:auto;
-  border-radius: 25px;
-  padding: 50px;
-  min-width:95vh;
-  min-height: 5vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-}
-
-.history-row5 h1
-{
-  font-size: 30px;
-    font-family: Comic;
-    color: rgb(0, 0, 0);
-    text-align: center;
-}
-
-
-.history-row6
-{
-  position: absolute; top:575px;
-  background-color: rgb(153, 255, 187,0.5);
-  margin: 10px 25px;
-  border-radius: 25px;
-  padding: 20px;
-  min-width:173vh;
-  min-height: 5vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-}
-
-.history-row6 h1
-{
-  font-size: 30px;
-    font-family: Comic;
-    color: rgb(0, 0, 0);
-    text-align: center;
-}
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+  }
+  .PlantDropdown form{
+  padding: 0 40px;
+  box-sizing: border-box;
+  }
 
 
 /*Shop Style*/
@@ -1016,25 +878,67 @@ font-size: 20px;
 }
 
 .carousel-inner .item:nth-child(1){
-  background:#f39c12
+  background-color: rgb(93, 35, 253);
 }
 
+.carousel-inner .item:nth-child(1):hover {
+  background-color: #e62bff;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
+} 
+
 .carousel-inner .item:nth-child(2){
-  background:#00cec9
+  background-color:#00cec9;
+}
+
+.carousel-inner .item:nth-child(2):hover {
+  background-color: #3ef681;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
 }
 
 .carousel-inner .item:nth-child(3){
-  background:#ffc312
+  background-color:#ffc312;
+}
+
+.carousel-inner .item:nth-child(3):hover {
+  background-color: #ffb338;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
 }
 
 .carousel-inner .item:nth-child(4){
-  background:#fd89a8
+  background-color:#fd89a8;
+}
+
+.carousel-inner .item:nth-child(4):hover {
+  background-color: #ff38bd;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
 }
 
 .carousel-inner .item:nth-child(5){
-  background:#18e2f9
+  background-color:#18e2f9;
+}
+
+.carousel-inner .item:nth-child(5):hover {
+  background-color: #3881ff;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
 }
 
 .carousel-inner .item:nth-child(6){
-  background:#ff10cb
+  background-color:#ff10cb;
+}
+
+.carousel-inner .item:nth-child(6):hover {
+  background-color: #ff307f;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
 }
