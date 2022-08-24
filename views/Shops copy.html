@@ -28,16 +28,16 @@
         <script>
         var database = firebase.database();
     database.ref().once('value', function(snapshot){
-        if(snapshot.exists()){
-            var content = '';
-            snapshot.forEach(function(data){
-                var val = data.val();
-                content +='<h3>'  + val.shopName + '</h3>';
-                content +='<p>' + val.shopDescription + '</p>';
-            });
+        ref.once("value")
+    .then(function(snapshot) {
+    var a = snapshot.exists();  // true
+    var b = snapshot.child("Shops").exists(); // true
+    var shopDescription = snapshot.child("Shops/shopDescription").exists(); // true
+    var shopName = snapshot.child("Shops/shopName").exists(); // true
+    });
             $('#ex-table').append(content);
         }
-    });
+    );
         </script>
         
 
@@ -113,7 +113,7 @@
                                 <div class="col-sm-4" id="ex-table">
                                     <div>
                                          
-                                      <h3>shopName</h3>
+                                      <h3 id="shopName">shopName</h3>
                                         <p>shopDescription</p>  
                                     </div>
 
