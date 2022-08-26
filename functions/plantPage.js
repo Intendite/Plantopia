@@ -15,10 +15,12 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 
 window.onload = async function getPlants(){
+    // Pulling Plants from Firebase
     const getPlantsQuery = query(
         collection(firestore, 'Plants')
     );
 
+    // Manipulating the Data pulled from Firebase to show on the page
     const queryPlantSnapshot = await getDocs(getPlantsQuery);
     const allDocs = queryPlantSnapshot.forEach((snap) => {
         var selectPlants = document.getElementById("plantID");
