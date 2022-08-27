@@ -699,7 +699,7 @@ background-color: rgba(150, 212, 212, 0.4);
 }
 /*Shop Style End*/
 /*Plant Style*/
-.PlantDropdown{
+.plantDropdown{
   position: relative;
   top: 70%;
   left: 50%;
@@ -710,13 +710,13 @@ background-color: rgba(150, 212, 212, 0.4);
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
   }
-  .PlantDropdown h1{
+  .plantDropdown h1{
   top:20%;
   text-align: center;
   padding: 20px 0;
   border-bottom: 1px solid silver;
   }
-  .PlantDropdown form{
+  .plantDropdown form{
   padding: 0 40px;
   box-sizing: border-box;
   }
