@@ -46,6 +46,8 @@ window.onload = async function getPlants(){
             // Assign the Plant's name into the HTML element
             ele.textContent = opt;
             ele.value = opt;
+            // Assign Plant name as HTML Value of the Plant
+            ele.setAttribute("value", opt);
             // Insert the Plants available into the existing node
             selectPlants.appendChild(ele);
         }
@@ -118,4 +120,12 @@ async function getPlantsWithCondition(userPlantsList){
             }
         })
     }
+}
+
+window.onsubmit = async function addPlant(){
+    // Specify which HTML div to use
+    var selectPlants = document.getElementById("plantID").value;
+    alert(selectPlants);
+
+    // ADD PLANTS INTO USER FIREBASE JSON FILE
 }
