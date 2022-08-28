@@ -1,4 +1,4 @@
-import {firestore} from "../index.js";
+import { firestore } from "../index.js";
 import {
     getFirestore,
     doc,
@@ -46,8 +46,8 @@ window.onload = async function getPlants(){
             // Assign the Plant's name into the HTML element
             ele.textContent = opt;
             ele.value = opt;
-            // Assign Plant name as HTML Value of the Plant
-            ele.setAttribute("value", opt);
+            // Assign plantID as HTML Value of the Plant
+            ele.setAttribute("value", JSONObject.plantID);
             // Insert the Plants available into the existing node
             selectPlants.appendChild(ele);
         }
@@ -123,9 +123,15 @@ async function getPlantsWithCondition(userPlantsList){
 }
 
 window.onsubmit = async function addPlant(){
-    // Specify which HTML div to use
-    var selectPlants = document.getElementById("plantID").value;
-    alert(selectPlants);
+    // Specify which HTML data to get from
+    var selectPlants = parseInt(document.getElementById("plantID").value);
 
-    // ADD PLANTS INTO USER FIREBASE JSON FILE
+    // Get reference to the collection that we are adding Data to
+    const userPlants = collection(firestore, "Users/" + "s6wnGQY3pH3oBGEyNJmZ/" + "Plants");
+
+    const data = {
+        plantID: selectPlants
+    };
+    
+    const newDoc = await addDoc(userPlants, data);
 }

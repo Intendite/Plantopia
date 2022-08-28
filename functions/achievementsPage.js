@@ -1,4 +1,4 @@
-import {firestore} from "../index.js";
+import { firestore } from "../index.js";
 import {
     getFirestore,
     doc,
@@ -120,6 +120,7 @@ window.onload = async function getAchievements(){
             // Assign the Plant's name into the HTML element
             ele.textContent = opt;
             ele.value = opt;
+            // Assign achievementID as HTML Value of the Plant
             ele.setAttribute("id", JSONObject.achievementID);
             // Insert the Achievements available into the existing node
             selectPlantAchievements.appendChild(ele);
