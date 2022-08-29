@@ -12,6 +12,7 @@
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
         <link rel = "stylesheet" type = "text/css" href = "/stylesheet/style.css">
+        <script type = "module" src = "../functions/reminderPage.js"></script>
     </head>
     
     <body>
@@ -59,64 +60,29 @@
             <h1>Plant Schedule</h1>    
         </div>
 
-        <table class="ui celled table">
+        <table class = "ui celled table" id = "remindersTable">
             <thead>
-            <tr><th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
-            <th>Sunday</th>
-            </tr></thead>
-            <tbody>
-              <tr>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-              </tr>
-              <tr>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-              </tr>
-              <tr>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-              </tr>
-              <tr>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-              </tr>
-              <tr>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-                <td data-label="Activity">Editable</td>
-              </tr>
+                <tr>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+                </tr>
+            </thead>
 
-              
+            <tbody>
+              <!-- <tr>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+                <td data-label="Activity">Editable</td>
+              </tr>               -->
             </tbody>
           </table>
 
