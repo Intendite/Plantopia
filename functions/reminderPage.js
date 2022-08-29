@@ -39,76 +39,73 @@ window.onload = async function getUserPlants(){
     });
 }
 
+// Function to get all tasks for the User
+// Input for the function is a List of PlantIDs the User owns 
 async function getTasks(userPlantsTaskIDList){
     // Specify which HTML element to use
     var userPlants = document.getElementById("remindersTable").getElementsByTagName('tbody')[0];
-    // Insert a row at the end of table
-    var newRow = userPlants.insertRow();
 
-    // Pulling Tasks from Firebase
-    const getTaskQuery = query(
-        collection(firestore, 'Tasks'), where("taskID", "==", userPlantsTaskIDList[i])
-    );
+    for (var i = 0; userPlantsTaskIDList.length; ++i){
+        // Pulling Tasks from Firebase
+        const getTaskQuery = query(
+            collection(firestore, 'Tasks'), where("taskID", "==", userPlantsTaskIDList[i])
+        );
 
-    // Manipulating the Data pulled from Firebase to show on the page
-    const queryTaskSnapshot = await getDocs(getTaskQuery);
-    const allDocs = queryTaskSnapshot.forEach((snap) => {
-        // Create an array to input Plants available
-        var taskOptions = [];
-        // Stringify converts a JavaScript value to a JSON String
-        var JSONData = JSON.stringify(snap.data());
-        // Parses a string and returns a JavaScript Object
-        var JSONObject = JSON.parse(JSONData);
-        // Get the TaskID from the JavaScript Object
-        var plantTaskID = JSONObject.taskID;
-        // Add the TasksIDs into the array 
-        taskOptions.push(plantTaskID);
-        for (var i = 0; taskOptions.length; ++i){
-            // Create a variable to store the Plant's name
-            var opt = taskOptions[i];
-
+        // Manipulating the Data pulled from Firebase to show on the page
+        const queryTaskSnapshot = await getDocs(getTaskQuery);
+        const allDocs = queryTaskSnapshot.forEach((snap) => {
+            // Create an array to input Plants available
+            var taskOptions = [];
+            // Stringify converts a JavaScript value to a JSON String
+            var JSONData = JSON.stringify(snap.data());
+            // Parses a string and returns a JavaScript Object
+            var JSONObject = JSON.parse(JSONData);
+            // Get the TaskID from the JavaScript Object
+            var plantTaskID = JSONObject.taskID;
+            // Add the TasksIDs into the array 
+            taskOptions.push(plantTaskID);
             // Array of Days for this task
             var taskDay = JSONObject.taskDay
 
-            for (var i = 0; taskDay.length; ++i){
-                if (taskDay[i] == "Monday"){
-                    // create it on monday
-                    // Insert a cell at the end of the row
-                    var newCell = newRow.insertCell();
-                    // Append a text node to the cell
-                    var newText = document.createTextNode(opt);
-                    newCell.appendChild(newText);
-                }
-                
-                else if (taskDay[i] == "Tuesday"){
-                    // create it on tuesday
-                }
+            // Insert a new row at the end of table
+            var newRow = userPlants.insertRow();
+            // Insert cells into the new row
+            var mondayCell = newRow.insertCell();
+            var tuesdayCell = newRow.insertCell();
+            var wednesdayCell = newRow.insertCell();
+            var thursdayCell = newRow.insertCell();
+            var fridayCell = newRow.insertCell();
+            var saturdayCell = newRow.insertCell();
+            var sundayCell = newRow.insertCell();
 
-                else if (taskDay[i] == "Wednesday"){
-                    // create it on wednesday
-                }
-
-                else if (taskDay[i] == "Thursday"){
-                    // create it on thursday
-                }
-
-                else if (taskDay[i] == "Friday"){
-                    // create it on thursday
-                }
-
-                else if (taskDay[i] == "Saturday"){
-                    // create it on thursday
-                }
-
-                else if (taskDay[i] == "Sunday"){
-                    // create it on thursday
-                }
+            // Check if the day is in the array taskDay and display the task on the HTML page if it is there
+            if (taskDay.find(element => element  == "Monday") == "Monday"){
+                mondayCell.appendChild(document.createTextNode(JSONObject.taskName));
+            }
+            
+            if (taskDay.find(element => element  == "Tuesday") == "Tuesday"){
+                tuesdayCell.appendChild(document.createTextNode(JSONObject.taskName));
             }
 
-            //console.log(opt)
-            // for (var i = 0; userPlants.rows[0].cells.length; ++i){
-            //     if () 
-            // }
-        }
-    });
+            if (taskDay.find(element => element  == "Wednesday") == "Wednesday"){
+                wednesdayCell.appendChild(document.createTextNode(JSONObject.taskName));
+            }
+
+            if (taskDay.find(element => element  == "Thursday") == "Thursday"){
+                thursdayCell.appendChild(document.createTextNode(JSONObject.taskName));
+            }
+
+            if (taskDay.find(element => element  == "Friday") == "Friday"){
+                fridayCell.appendChild(document.createTextNode(JSONObject.taskName));
+            }
+
+            if (taskDay.find(element => element  == "Saturday") == "Saturday"){
+                saturdayCell.appendChild(document.createTextNode(JSONObject.taskName));
+            }
+
+            if (taskDay.find(element => element  == "Sunday") == "Sunday"){
+                sundayCell.appendChild(document.createTextNode(JSONObject.taskName));
+            }
+        });
+    }
 }
