@@ -14,11 +14,13 @@ import {
     limit,
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 
+const currentUserUID = "s6wnGQY3pH3oBGEyNJmZ/"
+
 // Get Plants owned by the user
 window.onload = async function getUserPlants(){
     // Query to get a Specific User's Plants
     const getUserPlantsQuery = query(
-        collection(firestore, "Users/" + "s6wnGQY3pH3oBGEyNJmZ/" + "Plants")
+        collection(firestore, "Users/" + currentUserUID + "Plants")
     );
 
     // Manipulating the Data pulled from Firebase to get IDs of the Specific User's Plants
