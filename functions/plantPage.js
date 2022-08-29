@@ -58,7 +58,7 @@ window.onload = async function getPlants(){
     getUserPlants();
 }
 
-// Get Plants owned by the user
+// Get Plants owned by the User
 async function getUserPlants(){
     // Query to get a Specific User's Plants
     const getUserPlantsQuery = query(
@@ -83,10 +83,10 @@ async function getUserPlants(){
     });
 }
 
-// Query Firebase for user's plant
+// Query Firebase for User's plant
 async function getPlantsWithCondition(userPlantsList){
     // Specify which HTML element to use
-    var userPlants = document.getElementById("userPlants");
+    var plantsTable = document.getElementById("plantsTable");
 
     // Loop to go through the list of PlantIDs
     for (var i = 0; i < userPlantsList.length; ++i){
@@ -97,29 +97,25 @@ async function getPlantsWithCondition(userPlantsList){
 
         const plantSnapshot = await getDocs(getActualPlants);
         const allDocs = plantSnapshot.forEach((snap) => {
-            // Create an array to input the Plant Names of the Specific User's Plants
-            var userActualPlantsList = [];
             // Stringify converts a JavaScript value to a JSON String
             var JSONData = JSON.stringify(snap.data());
             // Parses a string and returns a JavaScript Object
             var JSONObject = JSON.parse(JSONData);
-            // Get the Plant Names from the JavaScript Object
-            var userPlantNames = JSONObject.plantName;
 
-            // Push all User owned Plants into userActualPlantsList
-            userActualPlantsList.push(userPlantNames);
+            // Insert a new row at the end of table
+            var newRow = plantsTable.insertRow();
+            // Insert cells into the new row
+            var plantCell = newRow.insertCell();
+            var typeCell = newRow.insertCell();
+            var descriptionCell = newRow.insertCell();
+            var dosCell = newRow.insertCell();
+            var dontsCell = newRow.insertCell();
 
-            for (var i = 0; i < userActualPlantsList.length; ++i){
-                // Create a variable to store the Plant's name
-                var opt = userActualPlantsList[i];
-                // Create an element in HTML to display Plants
-                var ele = document.createElement("div");
-                // Assign the Plant's name into the HTML element
-                ele.textContent = opt;
-                ele.value = opt;
-                // Insert the User Owned Plants into the existing node
-                userPlants.appendChild(ele);
-            }
+            plantCell.appendChild(document.createTextNode(JSONObject.plantName));
+            typeCell.appendChild(document.createTextNode(JSONObject.plantType));
+            descriptionCell.appendChild(document.createTextNode(JSONObject.plantDescription));
+            dosCell.appendChild(document.createTextNode(JSONObject.plantDos));
+            dontsCell.appendChild(document.createTextNode(JSONObject.plantDonts));
         })
     }
 }

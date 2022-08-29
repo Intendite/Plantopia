@@ -132,7 +132,7 @@ window.onload = async function getAchievements(){
     getUserAchievments();
 }
 
-// Get Achievements completed by the user
+// Get Achievements completed by the User
 async function getUserAchievments(){
     // Pulling Specific User's completed Achievements
     const getUserAchievementsQuery = query(

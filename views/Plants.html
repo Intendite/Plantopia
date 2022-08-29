@@ -10,6 +10,7 @@
         <meta name = "refresh" content = "600">
         <!-- To allow better viewing on mobile devices -->
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
         <link rel = "stylesheet" type = "text/css" href = "/stylesheet/style.css">
         <script type = "module" src = "../functions/plantPage.js"></script>
     </head>
@@ -52,9 +53,32 @@
             </div>
         </header>
 
-        <div id = "userPlants"></div>
+        <!-- <div id = "userPlants"></div> -->
+        <div class = "plants-grid-container">
+            <h1>Plants</h1>
+        </div>
 
-        <div class="plantDropdown">
+        <div class = "plants-row">
+            <h1>Plant Schedule</h1>    
+        </div>
+
+        <!-- Table to display Plants the User owns -->
+        <table class = "ui celled table" id = "plantsTable">
+            <thead>
+                <tr>
+                    <th>Plant</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Dos</th>
+                    <th>Donts</th>
+                </tr>
+            </thead>
+
+            <tbody></tbody>
+        </table>
+
+        <!-- Drop Down List to add Plants into Firebase -->
+        <div class = "plantDropdown">
             <div class = "addPlants">
                 <form>
                     <label for = "plantID"><h1>Choose a plant:</h1></label>
