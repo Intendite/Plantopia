@@ -701,7 +701,7 @@ background-color: rgba(150, 212, 212, 0.4);
 /*Plant Style*/
 .plantDropdown{
   position: relative;
-  top: 70%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
