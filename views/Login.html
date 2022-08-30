@@ -11,6 +11,7 @@
         <!-- To allow better viewing on mobile devices -->
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <link rel = "stylesheet" type = "text/css" href = "/stylesheet/style.css">
+        <script type = "module" src = "../functions/login.js"></script>
     </head>
     
     <body>
@@ -50,30 +51,24 @@
             </div>
         </header>
 
-        <div class = "center">
-            <h1>Login</h1>
-            <form method = "post">
-                <div class = "loginF">
-                    <input type = "text" required>
-                    <span></span>
-                    <label>Username</label>
-                </div>
+        <!---------------------- Login Page ------------------------->
+        <div class="loginHtml" id="login-div">
+            <h1 >Login</h1>
+            <input type="email" id="login-email" class="text-field" name="login-email" placeholder="Email" required/><br>
+            <input type="password" id="login-password" class="text-field" name="login-password" placeholder="Password" required/><br>
+            <button id="login-btn" class="btn-style">Login</button><br>
+            <div class="signup">
+                Not a member yet? <a href = "signup.html"></i>Sign Up</a>
+            </div>
+         </div>
+       
+         <div id="sign-out">
+            <h3 id="result"></h3><br>
+               <button id="log-out-btn" class="btn-style">LOG OUT</button>
+          </div>
 
-                <div class = "loginF">
-                    <input type = "password" required>
-                    <span></span>
-                    <label>Password</label>
-                </div>
+            <!-------------------- End of Login Page ---------------------->
 
-                <div class = "pass">Forgot Password?</div>
-
-                <input type = "submit" value = "Login">
-
-                <div class="signup">
-                    Not a member yet? <a href = "signup.html"></i>Sign Up</a>
-                </div>
-            </form>
-        </div>
         <script src = "script.js" async defer></script>
     </body>
 </html>

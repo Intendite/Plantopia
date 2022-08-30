@@ -12,6 +12,7 @@
         <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <link rel = "stylesheet" type = "text/css" href = "/stylesheet/style.css">
         <link rel = "preconnect" href = "https://drive.google.com/">
+        <script type = "module" src = "../functions/signup.js"></script>
     </head>
     
     <body>
@@ -52,36 +53,36 @@
             </div>
         </header>
 
+        <!--------------------------Sign up page start-------------------------------->
         <div class = "center">
             <h1>Sign up</h1>
-            <form method = "post" action = "/signed-up">
-                <div class="loginF">
-                    <input type = "text" name = "username" id = "username" required>
+            <form>
+
+                <div class = "loginF">
+                    <input type="text" name="email" id="email" required>
                     <span></span>
-                    <label>Username</label>
+                    <label for="email"><b>Email</b></label>
                 </div>
 
                 <div class = "loginF">
-                    <input type = "password" name = "password" id = "password" required>
+                    <input type="password" name="psw" id="psw" required>
                     <span></span>
-                    <label>Password</label>
+                    <label><b>Password</b></label>
                 </div>
 
-                <div class = "loginF">
-                    <input type = "email" name = "email" id = "email" required>
-                    <span></span>
-                    <label>Email</label>
-                </div>
-                
                 <div class = "pass"></div>
-                    <input type = "submit" value = "Sign up">
+                <button type="button" id="submitData" name="submitData" class="registerbtn">Sign up</button>
+                    <!-- <input type = "submit" value = "Sign up"> -->
                     <div class = "signup">
                         Are you a member? <a href = "Login.html"></i>Log in</a>
                 </div>
-            </form>
-        </div>
+             </form>
+        </div>  
+
+        <!--------------------------Sign up page end-------------------------------->
         
-        <script src = "script.js" async defer></script>
+
+        <script src = "script.js" async defer></script>        
     </body>
 </html>
 
