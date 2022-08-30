@@ -14,7 +14,7 @@ import {
     limit,
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 
-const currentUserUID = "s6wnGQY3pH3oBGEyNJmZ/"
+const currentUserUID = "s6wnGQY3pH3oBGEyNJmZ"
 
 // Get plants from Firebase
 window.onload = async function getPlants(){
@@ -62,7 +62,7 @@ window.onload = async function getPlants(){
 async function getUserPlants(){
     // Query to get a Specific User's Plants
     const getUserPlantsQuery = query(
-        collection(firestore, "Users/" + currentUserUID + "Plants")
+        collection(firestore, "Users/" + currentUserUID + "/Plants")
     );
 
     // Manipulating the Data pulled from Firebase to get IDs of the Specific User's Plants
@@ -120,16 +120,22 @@ async function getPlantsWithCondition(userPlantsList){
     }
 }
 
-window.onsubmit = async function addPlant(){
-    // Specify which HTML data to get from
+// Specify which HTML element to use
+var addPlantButton = document.getElementById("addPlantButton");
+
+addPlantButton.onclick = async function addPlant(){
+    // Pull the plantID from the Drop Down List in HTML
     var selectPlants = parseInt(document.getElementById("plantID").value);
-
-    // Get reference to the collection that we are adding Data to
-    const userPlants = collection(firestore, "Users/" + currentUserUID + "Plants");
-
+    
+    // Put the plantID as an Object to pass it to Firestore
     const data = {
         plantID: selectPlants
     };
-    
+
+    // Get reference to the collection that we are adding Data to
+    const userPlants = collection(firestore, "Users/" + currentUserUID + "/Plants");
+    // Add the new Plant into User's Plants
     const newDoc = await addDoc(userPlants, data);
+    // Reload the page
+    window.location.reload();
 }

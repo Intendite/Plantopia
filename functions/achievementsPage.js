@@ -14,7 +14,7 @@ import {
     limit,
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 
-const currentUserUID = "s6wnGQY3pH3oBGEyNJmZ/"
+const currentUserUID = "s6wnGQY3pH3oBGEyNJmZ"
 
 // Get all Achievements from Firestore and display it on the HTML page
 window.onload = async function getAchievements(){
@@ -136,7 +136,7 @@ window.onload = async function getAchievements(){
 async function getUserAchievments(){
     // Pulling Specific User's completed Achievements
     const getUserAchievementsQuery = query(
-        collection(firestore, "Users/" + currentUserUID + "Achievements"), where("achievementDone", "==", true)
+        collection(firestore, "Users/" + currentUserUID + "/Achievements"), where("achievementDone", "==", true)
     );
 
     // Manipulating the Data pulled from Firebase to show on the page
