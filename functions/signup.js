@@ -1,35 +1,22 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
-import { getAuth, 
-        createUserWithEmailAndPassword,
-        onAuthStateChanged ,
-        signInWithEmailAndPassword} 
-        from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyBvjz8rUCZe93G7ajUTTNkkNqKwCI5gcZk",
-    authDomain: "plantopia-90b99.firebaseapp.com",
-    projectId: "plantopia-90b99",
-    storageBucket: "plantopia-90b99.appspot.com",
-    messagingSenderId: "753505805986",
-    appId: "1:753505805986:web:e6ab978db3dc08221919fb",
-    measurementId: "G-QT0KZYEJFX"
-};
+import { firestore, firebaseConfig } from "../index.js";
+import { 
+  getAuth, 
+  createUserWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
+import {
+  doc,
+  setDoc,
+  collection,
+  addDoc
+} from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth(app);
-const user = auth.currentUser;
 
 submitData.addEventListener('click', (e) => {
     e.preventDefault();
-
     var email = document.getElementById('email').value;
     var password = document.getElementById('psw').value;
 
@@ -38,36 +25,120 @@ submitData.addEventListener('click', (e) => {
     .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        // ...
         alert('user created successfully!');
+        createNewUser(user.uid, user.email);
     })
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        // ..
         alert(errorMessage);
     });
-
-
 });
 
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      const uid = user.uid;
-      console.log('user')
-      // ...
-    } else {
-      // User is signed out
-      // ...
-      console.log('fail to sign in')
-    }
-  });
+// Function to add the New User into Firebase
+function createNewUser(userUID, email){
+  // Reference to New User Achievement Sub Collection
+  const userRef = doc(firestore, "Users/" + userUID);
 
+  // Reference to New User Achievement Sub Collection
+  const userAchievementRef = collection(firestore, "Users/" + userUID + "/Achievements");
 
+  const userEmail = {
+    userEmail: email
+  };
 
+  setDoc(userRef, userEmail);
 
+  // Add Fields for the Achievement Sub Collection
+  const docData1 = {
+    achievementID: 1,
+    achievementDone: false
+  };
 
+  const docData2 = {
+    achievementID: 2,
+    achievementDone: false
+  };
+  
+  const docData3 = {
+    achievementID: 3,
+    achievementDone: false
+  };
 
+  const docData4 = {
+    achievementID: 4,
+    achievementDone: false
+  };
 
+  const docData5 = {
+    achievementID: 5,
+    achievementDone: false
+  };
+
+  const docData6 = {
+    achievementID: 6,
+    achievementDone: false
+  };
+
+  const docData7 = {
+    achievementID: 7,
+    achievementDone: false
+  };
+
+  const docData8 = {
+    achievementID: 8,
+    achievementDone: false
+  };
+
+  const docData9 = {
+    achievementID: 9,
+    achievementDone: false
+  };
+
+  const docData10 = {
+    achievementID: 10,
+    achievementDone: false
+  };
+
+  const docData11 = {
+    achievementID: 11,
+    achievementDone: false
+  };
+
+  const docData12 = {
+    achievementID: 12,
+    achievementDone: false
+  };
+
+  const docData13 = {
+    achievementID: 13,
+    achievementDone: false
+  };
+
+  const docData14 = {
+    achievementID: 14,
+    achievementDone: false
+  };
+
+  const docData15 = {
+    achievementID: 15,
+    achievementDone: false
+  };
+    
+  // Add Achievements to User
+  addDoc(userAchievementRef, docData1);
+  addDoc(userAchievementRef, docData2);
+  addDoc(userAchievementRef, docData3);
+  addDoc(userAchievementRef, docData4);
+  addDoc(userAchievementRef, docData5);
+  addDoc(userAchievementRef, docData6);
+  addDoc(userAchievementRef, docData7);
+  addDoc(userAchievementRef, docData8);
+  addDoc(userAchievementRef, docData9);
+  addDoc(userAchievementRef, docData10);
+  addDoc(userAchievementRef, docData11);
+  addDoc(userAchievementRef, docData12);
+  addDoc(userAchievementRef, docData13);
+  addDoc(userAchievementRef, docData14);
+  addDoc(userAchievementRef, docData15);
+}

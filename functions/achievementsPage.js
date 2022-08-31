@@ -1,17 +1,9 @@
 import { firestore } from "../index.js";
 import {
-    getFirestore,
-    doc,
-    setDoc,
     collection,
-    addDoc,
-    getDoc,
-    onSnapshot,
     query,
     where,
-    getDocs,
-    orderBy,
-    limit,
+    getDocs
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 
 const currentUserUID = "s6wnGQY3pH3oBGEyNJmZ"

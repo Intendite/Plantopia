@@ -1,23 +1,19 @@
 import { firestore } from "../index.js";
+import { currentUserUID } from "./login.js";
 import {
-    getFirestore,
-    doc,
-    setDoc,
     collection,
     addDoc,
-    getDoc,
-    onSnapshot,
     query,
     where,
-    getDocs,
-    orderBy,
-    limit,
+    getDocs
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 
-const currentUserUID = "s6wnGQY3pH3oBGEyNJmZ"
+const currentUser = currentUserUID;
 
 // Get plants from Firebase
 window.onload = async function getPlants(){
+    alert(currentUser)
+
     // Pulling Plants from Firebase
     const getPlantsQuery = query(
         collection(firestore, 'Plants')
