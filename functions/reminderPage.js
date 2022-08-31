@@ -1,24 +1,45 @@
-import { firestore } from "../index.js";
+import { firestore, firebaseConfig } from "../index.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
 import {
     collection,
     query,
     where,
     getDocs
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+import { 
+    getAuth,
+    onAuthStateChanged
+ } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
 
-const currentUserUID = "s6wnGQY3pH3oBGEyNJmZ"
+var currentUserUID;
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+
+// Get the Current User's UID
+function getUserUID(){
+    // Set an observer on the Auth object to ensure that the Auth object isn't in an intermediate state
+    onAuthStateChanged(auth, (user) => {
+        // If there is a User logged in, get the UID of the User
+        if (user) {
+            currentUserUID = user.uid;
+        }
+    });
+}
 
 // Get Plants owned by the user
 window.onload = async function getUserPlants(){
+    getUserUID();
     // Query to get a Specific User's Plants
     const getUserPlantsQuery = query(
         collection(firestore, "Users/" + currentUserUID + "/Plants")
     );
 
-    // Manipulating the Data pulled from Firebase to get IDs of the Specific User's Plants
+    // Manipulating the Data pulled from Firebase to get IDs of the Specific User"s Plants
     const queryUserPlantsSnapshot = await getDocs(getUserPlantsQuery);
     const allDocs = queryUserPlantsSnapshot.forEach((snap) => {
-        // Create an array to input the PlantIDs of the Specific User's Plants
+        // Create an array to input the PlantIDs of the Specific User"s Plants
         var userPlantsList = [];
         // Stringify converts a JavaScript value to a JSON String
         var JSONData = JSON.stringify(snap.data());
@@ -61,11 +82,11 @@ async function getUsersTaskID(userPlantsList){
 // Input for the function is a List of PlantTaskIDs 
 async function getTasks(userPlantsTaskIDList){
     // Specify which HTML element to use
-    var remindersTable = document.getElementById("remindersTable").getElementsByTagName('tbody')[0];
+    var remindersTable = document.getElementById("remindersTable").getElementsByTagName("tbody")[0];
     
     // Pulling Tasks from Firebase
     const getTaskQuery = query(
-        collection(firestore, 'Tasks'), where("taskID", "==", userPlantsTaskIDList[i])
+        collection(firestore, "Tasks"), where("taskID", "==", userPlantsTaskIDList[i])
     );
 
     // Manipulating the Data pulled from Firebase to show on the page

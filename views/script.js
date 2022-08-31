@@ -1,11 +1,11 @@
-const btnHam = document.querySelector('.ham-btn');
-const btnTimes = document.querySelector('.times-btn');
-const navBar = document.getElementById('Nav-Bar');
+const btnHam = document.querySelector(".ham-btn");
+const btnTimes = document.querySelector(".times-btn");
+const navBar = document.getElementById("Nav-Bar");
 // const carousel = new Carousel({
-//     root: document.querySelector('.carousel'),
+//     root: document.querySelector(".carousel"),
 //   });
 
-btnHam.addEventListener('click', function()
+btnHam.addEventListener("click", function()
 {
     if(btnHam.className !== "")
     {
@@ -15,7 +15,7 @@ btnHam.addEventListener('click', function()
     }
 })
 
-btnTimes.addEventListener('click', function()
+btnTimes.addEventListener("click", function()
 {
     if(btnHam.className !== "")
     {
@@ -25,34 +25,34 @@ btnTimes.addEventListener('click', function()
     }
 })
 
-const productContainers = [...document.querySelectorAll('.product-container')];
-const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
-const preBtn = [...document.querySelectorAll('.pre-btn')];
+const productContainers = [...document.querySelectorAll(".product-container")];
+const nxtBtn = [...document.querySelectorAll(".nxt-btn")];
+const preBtn = [...document.querySelectorAll(".pre-btn")];
 
 productContainers.forEach((item, i) => {
     let containerDimensions = item.getBoundingClientRect();
     let containerWidth = containerDimensions.width;
 
-    nxtBtn[i].addEventListener('click', () => {
+    nxtBtn[i].addEventListener("click", () => {
         item.scrollLeft += containerWidth;
     })
 
-    preBtn[i].addEventListener('click', () => {
+    preBtn[i].addEventListener("click", () => {
         item.scrollLeft -= containerWidth;
     })
 })
 
-var acc = document.getElementsByClassName('accordion');
+var acc = document.getElementsByClassName("accordion");
 var i;
 var len = acc.length;
 for(i = 0; i < len; i++){
-    acc[i].addEventListener('click',function(){
-        this.classList.toggle('active');
+    acc[i].addEventListener("click",function(){
+        this.classList.toggle("active");
         var panel = this.nextElementSibling;
         if(panel.style.maxHeight){
             panel.style.maxHeight = null;
         }else{
-            panel.style.maxHeight = panel.scrollHeight + 'px'
+            panel.style.maxHeight = panel.scrollHeight + "px"
         }
     })
 }

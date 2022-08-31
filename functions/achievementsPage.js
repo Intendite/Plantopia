@@ -1,18 +1,40 @@
-import { firestore } from "../index.js";
+import { firestore, firebaseConfig } from "../index.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
 import {
     collection,
     query,
     where,
     getDocs
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+import { 
+    getAuth,
+    onAuthStateChanged
+ } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
 
-const currentUserUID = "s6wnGQY3pH3oBGEyNJmZ"
+var currentUserUID;
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+
+// Get the Current User's UID
+function getUserUID(){
+    // Set an observer on the Auth object to ensure that the Auth object isn't in an intermediate state
+    onAuthStateChanged(auth, (user) => {
+        // If there is a User logged in, get the UID of the User
+        if (user) {
+            currentUserUID = user.uid;
+        }
+    });
+}
 
 // Get all Achievements from Firestore and display it on the HTML page
 window.onload = async function getAchievements(){
+    getUserUID();
+    
     // Pulling Achievements that are Plants type from Firebase
     const getPlantAchievementsQuery = query(
-        collection(firestore, 'Achievements'), where("achievementType", "==", "Plants")
+        collection(firestore, "Achievements"), where("achievementType", "==", "Plants")
     );
 
     // Manipulating the Data pulled from Firebase to show on the page
@@ -49,7 +71,7 @@ window.onload = async function getAchievements(){
 
     // Pulling Achievments that are Hydartion type from Firebase
     const getHydrationAchievementsQuery = query(
-        collection(firestore, 'Achievements'), where("achievementType", "==", "Hydration")
+        collection(firestore, "Achievements"), where("achievementType", "==", "Hydration")
     );
 
     // Manipulating the Data pulled from Firebase to show on the page
@@ -86,7 +108,7 @@ window.onload = async function getAchievements(){
 
     // Pulling Achievments that are Hydartion type from Firebase
     const getUpdatesAchievementsQuery = query(
-        collection(firestore, 'Achievements'), where("achievementType", "==", "Tasks")
+        collection(firestore, "Achievements"), where("achievementType", "==", "Tasks")
     );
 
     // Manipulating the Data pulled from Firebase to show on the page
@@ -149,7 +171,7 @@ async function getUserAchievments(){
         for (var i = 0; i < completedAchievementsList.length; ++i){
             // Specify which HTML element to use
             var selectUserAchievements = document.getElementById(completedAchievementsList[i]);
-            // Strikethrough the User's completed Achievements
+            // Strikethrough the User"s completed Achievements
             selectUserAchievements.innerHTML = "<strike>" + selectUserAchievements.innerHTML + "</strike>";             
         }
     });

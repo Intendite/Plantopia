@@ -15,17 +15,17 @@ import {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-submitData.addEventListener('click', (e) => {
+submitData.addEventListener("click", (e) => {
     e.preventDefault();
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('psw').value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("psw").value;
 
     // user sign up function
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        alert('user created successfully!');
+        alert("user created successfully!");
         createNewUser(user.uid, user.email);
         window.open("Login.html");
     })

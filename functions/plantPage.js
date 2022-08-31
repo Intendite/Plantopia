@@ -1,22 +1,43 @@
-import { firestore } from "../index.js";
-import { currentUserUID } from "./login.js";
+import { firestore, firebaseConfig } from "../index.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
 import {
     collection,
     addDoc,
     query,
     where,
-    getDocs
+    getDocs,
+    updateDoc
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+import { 
+    getAuth,
+    onAuthStateChanged
+ } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
 
-const currentUser = currentUserUID;
+var currentUserUID;
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+
+// Get the Current User's UID
+function getUserUID(){
+    // Set an observer on the Auth object to ensure that the Auth object isn't in an intermediate state
+    onAuthStateChanged(auth, (user) => {
+        // If there is a User logged in, get the UID of the User
+        if (user) {
+            currentUserUID = user.uid;
+            plantAchievementChecker();
+        }
+    });
+}
 
 // Get plants from Firebase
 window.onload = async function getPlants(){
-    alert(currentUser)
+    getUserUID();
 
     // Pulling Plants from Firebase
     const getPlantsQuery = query(
-        collection(firestore, 'Plants')
+        collection(firestore, "Plants")
     );
 
     // Manipulating the Data pulled from Firebase to show on the page
@@ -122,7 +143,7 @@ var addPlantButton = document.getElementById("addPlantButton");
 addPlantButton.onclick = async function addPlant(){
     // Pull the plantID from the Drop Down List in HTML
     var selectPlants = parseInt(document.getElementById("plantID").value);
-    
+
     // Put the plantID as an Object to pass it to Firestore
     const data = {
         plantID: selectPlants
@@ -130,8 +151,64 @@ addPlantButton.onclick = async function addPlant(){
 
     // Get reference to the collection that we are adding Data to
     const userPlants = collection(firestore, "Users/" + currentUserUID + "/Plants");
-    // Add the new Plant into User's Plants
+    // Add the new Plant into User"s Plants
     const newDoc = await addDoc(userPlants, data);
     // Reload the page
     window.location.reload();
+}
+
+async function plantAchievementChecker(){
+    // Query to get a Specific User's Plants
+    const getUserPlantsQuery = query(
+        collection(firestore, "Users/" + currentUserUID + "/Plants")
+    );
+
+    // Create an array to input the PlantIDs of the Specific User's Plants
+    var userPlantsList = [];
+
+    // Manipulating the Data pulled from Firebase to get IDs of the Specific User's Plants
+    const queryUserPlantsSnapshot = await getDocs(getUserPlantsQuery);
+    const allDocs = queryUserPlantsSnapshot.forEach((snap) => {
+        // Stringify converts a JavaScript value to a JSON String
+        var JSONData = JSON.stringify(snap.data());
+        // Parses a string and returns a JavaScript Object
+        var JSONObject = JSON.parse(JSONData);
+        // Get the PlantIDs from the JavaScript Object
+        var userPlantID = parseInt(JSONObject.plantID);
+        // Push all User owned PlantIDs into userPlantsList
+        userPlantsList.push(userPlantID);
+    });
+
+    // Create a variable to store User's total Plants
+    var totalPlants = userPlantsList.length;
+
+    // Query to get a Specific User's Achievements
+    const getUserAchievementsQuery = query(
+        collection(firestore, "Users/" + currentUserUID + "/Achievements")
+    );
+
+    // Check if User has completed the Achievements
+    if (totalPlants >= 1 && totalPlants < 3){
+        await updateDoc(getUserAchievementsQuery, {
+            achievementDone: true
+        }), where("achievementID", "==", 1);
+    }
+
+    if (totalPlants >= 3 && totalPlants < 5){
+        await updateDoc(getUserAchievementsQuery, {
+            achievementDone: true
+        }), where("achievementID", "==", 2);
+    }
+
+    if (totalPlants >= 5 && totalPlants < 10){
+        await updateDoc(getUserAchievementsQuery, {
+            achievementDone: true
+        }), where("achievementID", "==", 3);
+    }
+
+    if (totalPlants >= 10){
+        await updateDoc(getUserAchievementsQuery, {
+            achievementDone: true
+        }), where("achievementID", "==", 4);
+    }
 }
