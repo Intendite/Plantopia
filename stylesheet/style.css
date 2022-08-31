@@ -12,14 +12,14 @@ body{
   font-family:'Lato', sans-serif;
   background: linear-gradient(120deg,#e8eaeb, #97e9b2);
 }
-/* 
-global styling */
+/* Global Styling */
+
 img{
   width: 100%;
 }
+
 ul{
   list-style:none;
-
 }
 
 a{
@@ -32,8 +32,7 @@ hr{
   margin:0 auto;
 }
 
-/* header */
-
+/* Header */
 .top-head{
   display: flex;
   justify-content: space-between;
@@ -48,8 +47,7 @@ hr{
   cursor: pointer;
 }
 
-/* js related styling*/
-
+/* JS related Styling*/
 .times-btn{
   display: none;
 }
@@ -60,7 +58,17 @@ hr{
   height: auto;
 }
 
-/**General Styling*/
+/* General Styling */
+.row
+{
+background-color: rgb(153, 255, 187,0.5);
+text-align: center;
+margin: 10px 25px;
+border-radius: 25px;
+padding: 20px;
+min-height: 5vh;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+}
 
 .Nav-Bar ul li{
   text-align: center;
@@ -83,9 +91,8 @@ hr{
   text-decoration: underline;
 }
 
-
 @media(min-width: 800px){
-  /* nav */
+  /* Nav */
     .ham-btn, .times-btn{
     display: none!important;
   }
@@ -121,7 +128,7 @@ hr{
     background: none;
   
   }
-  }
+}
   
   @media(min-width:992px){
     main{
@@ -148,6 +155,7 @@ hr{
   background-size: cover;
   position: relative;
 }
+
 .text-box
 {
   width: 100%;
@@ -215,12 +223,10 @@ hr{
   transition:1s;
 }
 
-
 p 
 {
   text-align: justify;
 }
-
 
 *{
 margin: 0;
@@ -228,6 +234,7 @@ padding: 0;
 box-sizing: border-box;
 font-family: "Poppins", sans-serif;
 }
+
 body{
 margin: 0;
 padding: 0;
@@ -235,9 +242,7 @@ background: linear-gradient(120deg,#e8eaeb, #97e9b2);
 height: 100vh;
 }
 
-/*////////////////////////////////////////////////////////*/
-/*//////////////////// Sign Up page //////////////////////*/
-/*////////////////////////////////////////////////////////*/
+/*///////// Sign Up page ////////*/
 .center{
 position: absolute;
 top: 50%;
@@ -248,20 +253,24 @@ background: white;
 border-radius: 10px;
 box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
 }
+
 .center h1{
 text-align: center;
 padding: 20px 0;
 border-bottom: 1px solid silver;
 }
+
 .center form{
 padding: 0 40px;
 box-sizing: border-box;
 }
+
 form .loginF{
 position: relative;
 border-bottom: 2px solid #adadad;
 margin: 30px 0;
 }
+
 .loginF input{
 width: 100%;
 padding: 0 5px;
@@ -271,6 +280,7 @@ border: none;
 background: none;
 outline: none;
 }
+
 .loginF label{
 position: absolute;
 top: 50%;
@@ -281,6 +291,7 @@ font-size: 16px;
 pointer-events: none;
 transition: .5s;
 }
+
 .loginF span::before{
 content: '';
 position: absolute;
@@ -291,20 +302,24 @@ height: 2px;
 background: #2691d9;
 transition: .5s;
 }
+
 .loginF input:focus ~ label,
 .loginF input:valid ~ label{
 top: -5px;
 color: #2691d9;
 }
+
 .loginF input:focus ~ span::before,
 .loginF input:valid ~ span::before{
 width: 100%;
 }
+
 .pass{
 margin: -5px 0 20px 5px;
 color: #a6a6a6;
 cursor: pointer;
 }
+
 .pass:hover{
 text-decoration: underline;
 }
@@ -321,11 +336,11 @@ font-weight: 700;
 cursor: pointer;
 outline: none;
 }
+
 button[type="button"]:hover{
 border-color: #2691d9;
 transition: .5s;
 }
-
 
 .signup{
 margin: 30px 0;
@@ -333,18 +348,15 @@ text-align: center;
 font-size: 16px;
 color: #666666;
 }
+
 .signup a{
 color: #2691d9;
 text-decoration: none;
 }
+
 .signup a:hover{
 text-decoration: underline;
 }
-
-/*////////////////////////////////////////////////////////*/
-/*//////////////////// Sign Up page END //////////////////*/
-/*////////////////////////////////////////////////////////*/
-
 
 .product-thumb {
   width: 100%;
@@ -397,24 +409,12 @@ border: none;
 }
 
 
-/*////////////////////////////////////////////////////////*/
-/*//////////////////// Achivement page ///////////////////*/
-/*////////////////////////////////////////////////////////*/
-
-/* Plants */
+/*/// Achivements page ///*/
 .achievements-grid-container
 {
   display: grid;
   grid-template-columns: auto;
   margin-top: 50px;
-}
-
-.achievements-grid-container h2
-{
-  font-size: 60px;
-  font-family: serif;
-  position: relative;
-  text-align: center;
 }
 
 .achievements-row
@@ -478,7 +478,6 @@ border: none;
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap');
 /* PERFORMANCES */
-
 .performances h5
 {
   font-size: 1.4em;
@@ -568,16 +567,7 @@ background-color: #666699;
 .active .performanceicon:after 
 {content: "\2212";}
 
-
-/*////////////////////////////////////////////////////////////*/
-/*//////////////////// Achivement page End ///////////////////*/
-/*////////////////////////////////////////////////////////////*/
-
-
-/*////////////////////////////////////////////////////////////*/
-/*//////////////////// Reminder Page Start ///////////////////*/
-/*////////////////////////////////////////////////////////////*/
-
+/*/// Reminders Page ///*/
 .reminder-grid-container
 {
   display: grid;
@@ -585,24 +575,6 @@ background-color: #666699;
   font-size: 60px;
   font-family: Comic;
   position: relative;
-  text-align: center;
-}
-
-.reminder-row
-{
-background-color: rgb(153, 255, 187,0.5);
-margin: 10px 25px;
-border-radius: 25px;
-padding: 20px;
-min-height: 5vh;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-}
-
-.reminder-row h1
-{
-font-size: 30px;
-  font-family: Comic;
-  color: rgb(0, 0, 0);
   text-align: center;
 }
 
@@ -622,20 +594,15 @@ th:nth-child(even),td:nth-child(even) {
 background-color: rgba(150, 212, 212, 0.4);
 }
 
-/*////////////////////////////////////////////////////////////*/
-/*//////////////////// Reminder Page End ///////////////////*/
-/*////////////////////////////////////////////////////////////*/
-
-
-
-/*Shop Style*/
-
+/*///// Shops Page//////*/
 .col-sm-4 div{
   padding: 50px
 }
+
 .col-sm-4 div p{
   text-align: justify;
 }
+
 .col-sm-4 div h3{
   border-bottom: 1px solid #000;
   padding-bottom: 10px;
@@ -707,32 +674,8 @@ background-color: rgba(150, 212, 212, 0.4);
   -ms-transition: background-color 1000ms linear;
   transition: background-color 1000ms linear;
 }
-/*Shop Style End*/
-/*Plant Style*/
 
-.plants-grid-container
-{
-  display: grid;
-  grid-template-columns: auto;
-  font-size: 60px;
-  font-family: Comic;
-  position: relative;
-  text-align: center;
-}
-
-.plants-row
-{
-background-color: rgb(153, 255, 187,0.5);
-text-align: center;
-margin: 10px 25px;
-border-radius: 25px;
-padding: 20px;
-min-height: 5vh;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-}
-
-
-
+/*////// Plants Page /////*/
 .plantDropdown{
   position: relative;
   bottom: -280px;
@@ -743,21 +686,21 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   background: white;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
-  }
-  .plantDropdown h1{
-  top:20%;
-  text-align: center;
-  padding: 20px 0;
-  border-bottom: 1px solid silver;
-  }
-  .plantDropdown form{
-  padding: 10px 40px 100px;
-  box-sizing: border-box;
-  }
+}
+
+.plantDropdown h1{
+top:20%;
+text-align: center;
+padding: 20px 0;
+border-bottom: 1px solid silver;
+}
+
+.plantDropdown form{
+padding: 10px 40px 100px;
+box-sizing: border-box;
+}
   
-/*////////////////////////////////////////////////////////*/
-/*//////////////////// login Ppage //////////////////////*/
-/*////////////////////////////////////////////////////////*/
+/*///// Log In Page /////*/
 .loginHtml{
   position: absolute;
   top:50%;
@@ -770,11 +713,13 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   text-align: center;
   color:rgb(17, 17, 17);
 }
+
 .loginHtml h1{
   text-align: center;
   padding: 20px 0;
   border-bottom: 1px solid silver;
-  }
+}
+
 .text-field{
   padding: 10px 30px;
   margin: 20px 0;
@@ -783,6 +728,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   font-size: 12pt;
   color: #2691d9;
 }
+
 .btn-style{
   padding: 10px 30px;
   border:1px solid white;
@@ -790,6 +736,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   background-color: white;
   color: #2691d9;
 }
+
 .btn-style:hover{
   background-color:#2691d9;;
   color:white;
@@ -806,6 +753,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
 #register-div{
   display:none;
 }
+
 #sign-out{
   display:none;
   position: absolute;
@@ -815,11 +763,8 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   font-size: 16pt;
   color: white;
 }
-  /*////////////////////////////////////////////////////////*/
-  /*//////////////////// Login page END //////////////////*/
-  /*////////////////////////////////////////////////////////*/
 
-  #addPlantButton{
+#addPlantButton{
     width: 100%;
     height: 50px;
     border: 1px solid;
@@ -830,5 +775,4 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
     font-weight: 700;
     cursor: pointer;
     outline: none;
-    }
-
+}

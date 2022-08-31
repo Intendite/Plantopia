@@ -27,6 +27,7 @@ submitData.addEventListener('click', (e) => {
         const user = userCredential.user;
         alert('user created successfully!');
         createNewUser(user.uid, user.email);
+        window.open("Login.html");
     })
     .catch((error) => {
         const errorCode = error.code;
