@@ -29,7 +29,7 @@ document.getElementById("login-btn").addEventListener("click", function(){
       document.getElementById("login-div").style.display = "none";
 
       // if user log in sucessfully it will go to this page
-      document.getElementById("result").innerHTML = "Welcome Back<br>" + loginEmail + " was Login Successfully";
+      window.location.href = "../views/Home.html";
    })
    .catch((error) => {
       const errorCode = error.code;
