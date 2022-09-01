@@ -15,8 +15,11 @@ import {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+// create an event listener function for user to click and register
 submitData.addEventListener("click", (e) => {
     e.preventDefault();
+
+    // Specify which HTML element to use
     var email = document.getElementById("email").value;
     var password = document.getElementById("psw").value;
 
@@ -25,13 +28,19 @@ submitData.addEventListener("click", (e) => {
     .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
+
+        // if user sign up successfully, alert message will be sent
         alert("user created successfully!");
+
+        // create new user to link to firestore
         createNewUser(user.uid, user.email);
         window.open("Login.html");
     })
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+
+        // if user fail to register, it will send a message
         alert(errorMessage);
     });
 });
