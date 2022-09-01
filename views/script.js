@@ -51,7 +51,9 @@ for(i = 0; i < len; i++){
         var panel = this.nextElementSibling;
         if(panel.style.maxHeight){
             panel.style.maxHeight = null;
-        }else{
+        }
+        
+        else{
             panel.style.maxHeight = panel.scrollHeight + "px"
         }
     })

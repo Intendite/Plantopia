@@ -29,12 +29,10 @@ submitData.addEventListener("click", (e) => {
         // Signed in 
         const user = userCredential.user;
 
-        // An alert message will be sent if the User signs up successfully
-        alert("user created successfully!");
-
         // Add the new User to Firestore
         createNewUser(user.uid, user.email);
-        window.location = "../index.html";
+        // An alert message will be sent if the User signs up successfully
+        alert("User created successfully! Please proceed to the Log In Page!");
     })
 
     .catch((error) => {
