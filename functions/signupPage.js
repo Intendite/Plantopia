@@ -34,7 +34,7 @@ submitData.addEventListener("click", (e) => {
 
         // Add the new User to Firestore
         createNewUser(user.uid, user.email);
-        window.location("../index.html");
+        window.location = "../index.html";
     })
 
     .catch((error) => {
