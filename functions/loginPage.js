@@ -20,33 +20,30 @@ document.getElementById("login-btn").addEventListener("click", function(){
     signInWithEmailAndPassword(auth, loginEmail, loginPassword)
     .then((userCredential) => {
         // User has Logged In
-        const user = userCredential.user;
+        window.location = "views/Home.html";
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
         document.getElementById("sign-out").style.display = "inline";
         document.getElementById("login-div").style.display = "none";
 
-      // if user log in sucessfully it will go to this page
-      document.getElementById("result").innerHTML = "Welcome Back<br>" + loginEmail + " was Login Successfully";
-   })
-   .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      document.getElementById("sign-out").style.display = "inline";
-      document.getElementById("login-div").style.display = "none";
-
-      //if user failed to log in, an error message will be send to user
-      document.getElementById("result").innerHTML = "Sorry! <br>" + errorMessage;
-   });
+        //if user failed to log in, an error message will be send to user
+        document.getElementById("result").innerHTML = "Sorry! <br>" + errorMessage;
+    });
 });
 
 // Create an event listener for Users to Log Out
 document.getElementById("log-out-btn").addEventListener("click", function(){
-    //create a sign out function for user to sign out
-    signOut(auth).then(() => {
-        document.getElementById("sign-out").style.display = "none";
-        document.getElementById("login-div").style.display = "inline";
-    }).catch((error) => {
-
-        // if user failed to log out, message will be alert to the user
+    // Signs the User out
+    signOut(auth)
+    .then(() => {
+        alert("Good Bye!");
+        window.location = "../index.html";
+    })
+    
+    .catch((error) => {
+    // Send a Message if the User fails to Log Out
         document.getElementById("result").innerHTML = "Sorry! <br>" + errorMessage;
     });
 });

@@ -18,6 +18,7 @@
         <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <!-- Latest compiled JavaScript -->
         <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script type = "module" src = "../functions/shopsPage.js"></script>
     </head>
         
 
@@ -31,7 +32,7 @@
 
                     <div class = "ham-btn">
                         <span>
-                                <i class = "fas fa-bars"></i>
+                            <i class = "fas fa-bars"></i>
                         </span>
                     </div>
                     <div class = "times-btn">
@@ -50,7 +51,7 @@
                             <li><a href = "./Achievements.html">Achievements</a></li>
                             <li class = "active"><a href = "./Shops.html">Shops</a></li>
                             <li><a href = "./Reminders.html">Reminders</a></li>
-                            <li><a href = "../index.html">Log In</a></li>
+                            <li><a href = "javascript:logOut();" id = "log-out-btn">Log Out</a></li>
                         </ul>
                     </nav>
                 </div>

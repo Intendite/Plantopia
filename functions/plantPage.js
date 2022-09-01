@@ -11,14 +11,15 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 import { 
     getAuth,
-    onAuthStateChanged
+    onAuthStateChanged,
+    signOut
  } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
 
 var currentUserUID;
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+const auth = getAuth(app);
 
 // Get the Current User's UID
 function getUserUID(){
@@ -276,3 +277,18 @@ async function plantAchievementChecker(){
         });
     }
 }
+
+// Create an event listener for Users to Log Out
+document.getElementById("log-out-btn").addEventListener("click", function(){
+    // Signs the User out
+    signOut(auth)
+    .then(() => {
+        alert("Good Bye!");
+        window.location = "../index.html";
+    })
+    
+    .catch((error) => {
+    // Send a Message if the User fails to Log Out
+        document.getElementById("result").innerHTML = "Sorry! <br>" + errorMessage;
+    });
+});
