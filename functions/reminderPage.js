@@ -19,19 +19,19 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 // Get the Current User's UID
-function getUserUID(){
+window.onload = function getUserUID(){
     // Set an observer on the Auth object to ensure that the Auth object isn't in an intermediate state
     onAuthStateChanged(auth, (user) => {
         // If there is a User logged in, get the UID of the User
         if (user) {
             currentUserUID = user.uid;
+            getUserPlants();
         }
     });
 }
 
 // Get Plants owned by the user
-window.onload = async function getUserPlants(){
-    getUserUID();
+async function getUserPlants(){
     // Query to get a Specific User's Plants
     const getUserPlantsQuery = query(
         collection(firestore, "Users/" + currentUserUID + "/Plants")
