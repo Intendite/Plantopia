@@ -1,6 +1,7 @@
 import { firestore, firebaseConfig } from "../index.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
 import {
+    doc,
     collection,
     addDoc,
     query,
@@ -182,33 +183,96 @@ async function plantAchievementChecker(){
     // Create a variable to store User's total Plants
     var totalPlants = userPlantsList.length;
 
-    // Query to get a Specific User's Achievements
-    const getUserAchievementsQuery = query(
-        collection(firestore, "Users/" + currentUserUID + "/Achievements")
-    );
-
     // Check if User has completed the Achievements
-    if (totalPlants >= 1 && totalPlants < 3){
-        await updateDoc(getUserAchievementsQuery, {
-            achievementDone: true
-        }), where("achievementID", "==", 1);
+    if (totalPlants >= 1 && totalPlants <= 3){
+        // Query to get a Specific User's Achievements
+        const getUserAchievementsQuery = query(
+            collection(firestore, "Users/" + currentUserUID + "/Achievements"), where("achievementID", "==", 1)
+        );
+
+        // Create a variable to store the document's Path
+        var documentPath;
+
+        // Manipulating the Data pulled from Firebase to get IDs of the Specific User's Plants
+        const queryUserPlantsSnapshot = await getDocs(getUserAchievementsQuery);
+        const allDocs = queryUserPlantsSnapshot.forEach((snap) => {
+            // Stringify converts a JavaScript value to a JSON String
+            documentPath = snap.ref.path;
+            // Stores the new path as a Document Reference
+            const docRef = doc(firestore, documentPath);
+            // Updates the Document to show that the Achievement is done
+            updateDoc(docRef, {
+                achievementDone: true
+            });
+        });
     }
 
-    if (totalPlants >= 3 && totalPlants < 5){
-        await updateDoc(getUserAchievementsQuery, {
-            achievementDone: true
-        }), where("achievementID", "==", 2);
+    if (totalPlants >= 3 && totalPlants <= 5){
+        // Query to get a Specific User's Achievements
+        const getUserAchievementsQuery = query(
+            collection(firestore, "Users/" + currentUserUID + "/Achievements"), where("achievementID", "==", 2)
+        );
+
+        // Create a variable to store the document's Path
+        var documentPath;
+
+        // Manipulating the Data pulled from Firebase to get IDs of the Specific User's Plants
+        const queryUserPlantsSnapshot = await getDocs(getUserAchievementsQuery);
+        const allDocs = queryUserPlantsSnapshot.forEach((snap) => {
+            // Stringify converts a JavaScript value to a JSON String
+            documentPath = snap.ref.path;
+            // Stores the new path as a Document Reference
+            const docRef = doc(firestore, documentPath);
+            // Updates the Document to show that the Achievement is done
+            updateDoc(docRef, {
+                achievementDone: true
+            });
+        });
     }
 
-    if (totalPlants >= 5 && totalPlants < 10){
-        await updateDoc(getUserAchievementsQuery, {
-            achievementDone: true
-        }), where("achievementID", "==", 3);
+    if (totalPlants >= 5 && totalPlants <= 10){
+        // Query to get a Specific User's Achievements
+        const getUserAchievementsQuery = query(
+            collection(firestore, "Users/" + currentUserUID + "/Achievements"), where("achievementID", "==", 3)
+        );
+
+        // Create a variable to store the document's Path
+        var documentPath;
+
+        // Manipulating the Data pulled from Firebase to get IDs of the Specific User's Plants
+        const queryUserPlantsSnapshot = await getDocs(getUserAchievementsQuery);
+        const allDocs = queryUserPlantsSnapshot.forEach((snap) => {
+            // Stringify converts a JavaScript value to a JSON String
+            documentPath = snap.ref.path;
+            // Stores the new path as a Document Reference
+            const docRef = doc(firestore, documentPath);
+            // Updates the Document to show that the Achievement is done
+            updateDoc(docRef, {
+                achievementDone: true
+            });
+        });
     }
 
     if (totalPlants >= 10){
-        await updateDoc(getUserAchievementsQuery, {
-            achievementDone: true
-        }), where("achievementID", "==", 4);
+        // Query to get a Specific User's Achievements
+        const getUserAchievementsQuery = query(
+            collection(firestore, "Users/" + currentUserUID + "/Achievements"), where("achievementID", "==", 4)
+        );
+
+        // Create a variable to store the document's Path
+        var documentPath;
+
+        // Manipulating the Data pulled from Firebase to get IDs of the Specific User's Plants
+        const queryUserPlantsSnapshot = await getDocs(getUserAchievementsQuery);
+        const allDocs = queryUserPlantsSnapshot.forEach((snap) => {
+            // Stringify converts a JavaScript value to a JSON String
+            documentPath = snap.ref.path;
+            // Stores the new path as a Document Reference
+            const docRef = doc(firestore, documentPath);
+            // Updates the Document to show that the Achievement is done
+            updateDoc(docRef, {
+                achievementDone: true
+            });
+        });
     }
 }
